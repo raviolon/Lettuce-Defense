@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://cob4wsbc2ngah"]
+
+[ext_resource type="Texture2D" uid="uid://cvsk16a7jugy7" path="res://Mapas/Ruta_101.webp" id="1_2lgbv"]
+[ext_resource type="Script" path="res://Scripts/Botas.gd" id="2_kntl5"]
+[ext_resource type="Texture2D" uid="uid://e7xtmoorkm5p" path="res://Personaje/Designer.jpeg" id="3_c7x4g"]
+[ext_resource type="Script" path="res://Scripts/Menu_botas.gd" id="4_42uos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyu63"]
+size = Vector2(360.533, 17.217)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ujc2"]
+size = Vector2(101, 101)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Mapa" type="Sprite2D" parent="."]
+position = Vector2(577, 323)
+scale = Vector2(3.17778, 1.76667)
+texture = ExtResource("1_2lgbv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Mapa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/StaticBody2D"]
+position = Vector2(0.629371, -189.623)
+shape = SubResource("RectangleShape2D_tyu63")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Mapa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/StaticBody2D2"]
+position = Vector2(0.629372, 190.189)
+shape = SubResource("RectangleShape2D_tyu63")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Mapa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/StaticBody2D3"]
+position = Vector2(188.188, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_tyu63")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Mapa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/StaticBody2D4"]
+position = Vector2(-194.79, 2.26416)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_tyu63")
+
+[node name="Botas" type="CharacterBody2D" parent="."]
+script = ExtResource("2_kntl5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Botas"]
+position = Vector2(585, 303)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_c7x4g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Botas"]
+top_level = true
+position = Vector2(584.5, 302.5)
+shape = SubResource("RectangleShape2D_1ujc2")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_42uos")
+
+[node name="Esc" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 112.0
+offset_bottom = 84.0
+text = "Esc
+"
+
+[connection signal="pressed" from="Menu/Esc" to="Menu" method="_on_esc_pressed"]
