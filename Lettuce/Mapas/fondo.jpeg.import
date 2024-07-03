@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4lcb3pge81w1"
-path="res://.godot/imported/Ruta_101.png-802c2511c11921ea3a776b1221b057ca.ctex"
+uid="uid://d2r65vupw2ixp"
+path="res://.godot/imported/fondo.jpeg-1829d2ef2b546a51c5849a05f7944ad5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mapas/Ruta_101.png"
-dest_files=["res://.godot/imported/Ruta_101.png-802c2511c11921ea3a776b1221b057ca.ctex"]
+source_file="res://Mapas/fondo.jpeg"
+dest_files=["res://.godot/imported/fondo.jpeg-1829d2ef2b546a51c5849a05f7944ad5.ctex"]
 
 [params]
 
