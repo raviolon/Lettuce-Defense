@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b14n7xctul1of"]
+[gd_scene load_steps=4 format=3 uid="uid://b14n7xctul1of"]
 
+[ext_resource type="Script" path="res://Scripts/Torres/Tomate.gd" id="1_6r1hu"]
 [ext_resource type="Texture2D" uid="uid://djw4swv13mjai" path="res://Personaje/Tomate/pic_1549256667_1549256706.jpg" id="1_vj5o1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ryw"]
@@ -7,10 +8,14 @@ size = Vector2(101, 88)
 
 [node name="Tomate" type="CharacterBody2D"]
 position = Vector2(538, 331)
+script = ExtResource("1_6r1hu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n0ryw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Verdura" type="Sprite2D" parent="."]
 scale = Vector2(0.144923, 0.173729)
 texture = ExtResource("1_vj5o1")
+
+[node name="Muzzle" type="Marker2D" parent="Verdura"]
+position = Vector2(430, 0)

@@ -11,11 +11,9 @@ position = Vector2(538, 331)
 script = ExtResource("1_vmf1g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(219, -122)
 shape = SubResource("RectangleShape2D_n0ryw")
 
 [node name="Verdura" type="Sprite2D" parent="."]
-position = Vector2(219, -122.5)
 scale = Vector2(0.1275, 0.14172)
 texture = ExtResource("2_5o58h")
 
