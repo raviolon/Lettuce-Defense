@@ -232,26 +232,36 @@ a:hover {
 }
 
 .feature-item img {
-    width: 100px;
-    height: 100px;
+    width: 600px;
+    height: 450px;
 }
 
-.hero .download-btn {
-    align-self: center;
-    display: inline-block;
+.hero .download-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta la altura según sea necesario */
+}
+
+.download-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #4CAF50;
     color: white;
-    width: 300px;  /* Asegura que sea cuadrado ajustando el ancho y alto */
-    height: 100px; 
-    line-height: 150px;  /* Centra verticalmente el texto dentro del cuadrado */
-    text-align: center;  /* Centra horizontalmente el texto dentro del cuadrado */
+    width: 150px;  /* Ajusta el tamaño del botón */
+    height: 150px; 
+    text-align: center;  /* Centra horizontalmente el texto dentro del botón */
     text-decoration: none;
     font-size: 1.2em; /* Ajusta el tamaño del texto según sea necesario */
     border-radius: 10px; /* Opcional: redondear las esquinas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: añadir una sombra */
-
 }
 
-.hero .download-btn:hover {
+.download-btn:hover {
     background-color: #45a049; /* Cambia el color al pasar el cursor */
+}
+.imagen-feature {
+width: 600px;
+height: 600px;
 }
