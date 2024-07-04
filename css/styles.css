@@ -235,3 +235,23 @@ a:hover {
     width: 100px;
     height: 100px;
 }
+
+.hero .download-btn {
+    align-self: center;
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    width: 300px;  /* Asegura que sea cuadrado ajustando el ancho y alto */
+    height: 100px; 
+    line-height: 150px;  /* Centra verticalmente el texto dentro del cuadrado */
+    text-align: center;  /* Centra horizontalmente el texto dentro del cuadrado */
+    text-decoration: none;
+    font-size: 1.2em; /* Ajusta el tamaño del texto según sea necesario */
+    border-radius: 10px; /* Opcional: redondear las esquinas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: añadir una sombra */
+
+}
+
+.hero .download-btn:hover {
+    background-color: #45a049; /* Cambia el color al pasar el cursor */
+}
