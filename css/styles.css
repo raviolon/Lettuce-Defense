@@ -191,3 +191,47 @@ a {
 a:hover {
     color: rgb(112, 191, 110);
 }
+
+.content {
+    background-color: black;
+    color: white; 
+    padding: 20px; 
+}
+.hero {
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+}
+
+.hero p {
+    font-size: 1.5em;
+}
+
+.hero .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.features {
+    padding: 50px 20px;
+}
+
+.features h2 {
+    font-size: 2.5em;
+}
+
+.feature-item {
+    margin: 20px 0;
+}
+
+.feature-item img {
+    width: 100px;
+    height: 100px;
+}
