@@ -21,8 +21,8 @@ script = ExtResource("1_bq47f")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(598.5, 318.375)
-scale = Vector2(1.00917, 1.01444)
+position = Vector2(515.249, 390.25)
+scale = Vector2(0.856251, 1.14889)
 texture = ExtResource("2_ceumy")
 region_enabled = true
 region_rect = Rect2(0, 0, 1200, 675)
