@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7dpc4y47rw68"]
+
+[ext_resource type="Texture2D" uid="uid://cw7651s1xqq50" path="res://Personaje/Enemigos/cato_prueba.png" id="1_cuf6r"]
+[ext_resource type="Script" path="res://Escenas/Enemigo.gd" id="1_p0qby"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6wlfi"]
+radius = 18.0
+
+[node name="Enemigo" type="Node2D"]
+
+[node name="Enemigo" type="CharacterBody2D" parent="."]
+script = ExtResource("1_p0qby")
+
+[node name="CatoPrueba" type="Sprite2D" parent="Enemigo"]
+position = Vector2(1.25, -0.999984)
+scale = Vector2(0.116379, 0.12069)
+texture = ExtResource("1_cuf6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemigo"]
+shape = SubResource("CircleShape2D_6wlfi")

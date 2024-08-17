@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://4mu7b7cpdsyd"]
+[gd_scene load_steps=17 format=3 uid="uid://4mu7b7cpdsyd"]
 
 [ext_resource type="Texture2D" uid="uid://bost23h4ed4m8" path="res://Mapas/tilemapes.svg" id="1_cwkm4"]
 [ext_resource type="Script" path="res://Escenas/Mapa1.gd" id="1_xyh3x"]
@@ -9,7 +9,8 @@
 [ext_resource type="Script" path="res://Escenas/Torres.gd" id="5_cujmf"]
 [ext_resource type="PackedScene" uid="uid://bnshfmv8c0p33" path="res://Personaje/choclo.tscn" id="5_vvrek"]
 [ext_resource type="PackedScene" uid="uid://dj53ihnuu7dvs" path="res://Personaje/morron.tscn" id="6_osdmg"]
-[ext_resource type="PackedScene" uid="uid://1t7q7s6t5sql" path="res://Escenas/Menu.tscn" id="10_gbd7d"]
+[ext_resource type="Texture2D" uid="uid://1cb1dbrr55iu" path="res://icon.svg" id="10_cliks"]
+[ext_resource type="Script" path="res://Scripts/Camino_Enemigos.gd" id="10_wxwc6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5rcg"]
 texture = ExtResource("1_cwkm4")
@@ -43,6 +44,16 @@ texture = ExtResource("2_oylxd")
 [sub_resource type="TileSet" id="TileSet_ye2k6"]
 sources/0 = SubResource("TileSetAtlasSource_s5rcg")
 sources/1 = SubResource("TileSetAtlasSource_uaayk")
+
+[sub_resource type="Curve2D" id="Curve2D_x2gsy"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -11, 312, 0, 0, 0, 0, 305, 319, 0, 0, 0, 0, 313, 544, 0, 0, 0, 0, 648, 551, 0, 0, 0, 0, 641, 313, 0, 0, 0, 0, 462, 312, 0, 0, 0, 0, 462, 123, 0, 0, 0, 0, 741, 125, 0, 0, 0, 0, 745, 165, 0, 0, 0, 0, 836, 170, 0, 0, 0, 0, 838, 307, 0, 0, 0, 0, 984, 315, 0, 0, 0, 0, 988, 166, 0, 0, 0, 0, 1072, 168)
+}
+point_count = 14
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hjpc"]
+size = Vector2(47.4757, 42.0593)
 
 [node name="Juego" type="Node2D"]
 
@@ -128,4 +139,24 @@ position = Vector2(386, 481)
 [node name="Choclo" parent="Torres" instance=ExtResource("5_vvrek")]
 position = Vector2(526, 245)
 
-[node name="Menu" parent="." instance=ExtResource("10_gbd7d")]
+[node name="Camino_Enemigos" type="Node2D" parent="."]
+script = ExtResource("10_wxwc6")
+
+[node name="Path2D" type="Path2D" parent="Camino_Enemigos"]
+curve = SubResource("Curve2D_x2gsy")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Camino_Enemigos/Path2D"]
+position = Vector2(-11, 312)
+rotation = 0.0221483
+loop = false
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Camino_Enemigos/Path2D/PathFollow2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Camino_Enemigos/Path2D/PathFollow2D/CharacterBody2D"]
+position = Vector2(-7.88731, 1.66187)
+scale = Vector2(0.351928, 0.325827)
+texture = ExtResource("10_cliks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camino_Enemigos/Path2D/PathFollow2D/CharacterBody2D"]
+position = Vector2(-9.23191, 1.65466)
+shape = SubResource("RectangleShape2D_4hjpc")
