@@ -1,21 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfjbwmm1f2psn"]
+[gd_scene load_steps=5 format=3 uid="uid://bp3j2i2kku2hr"]
 
-[ext_resource type="Script" path="res://Scripts/Torres/Naranja.gd" id="1_vmf1g"]
-[ext_resource type="Texture2D" uid="uid://cdlf83dyejab5" path="res://Personaje/Naranja/1918_1.naranja.jpg" id="2_5o58h"]
+[ext_resource type="Script" path="res://Scripts/Torres/Choclo.gd" id="1_1pmjm"]
+[ext_resource type="Texture2D" uid="uid://cdlf83dyejab5" path="res://Personaje/Naranja/1918_1.naranja.jpg" id="2_tjy8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ryw"]
 size = Vector2(101, 88)
 
-[node name="Naranja" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_4mqvj"]
+radius = 85.8662
+
+[node name="Naranja" type="CharacterBody2D" groups=["Torres"]]
 position = Vector2(538, 331)
-script = ExtResource("1_vmf1g")
+script = ExtResource("1_1pmjm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n0ryw")
 
 [node name="Verdura" type="Sprite2D" parent="."]
-scale = Vector2(0.1275, 0.14172)
-texture = ExtResource("2_5o58h")
+scale = Vector2(0.2, 0.240331)
+texture = ExtResource("2_tjy8k")
 
 [node name="Mira" type="Marker2D" parent="Verdura"]
 position = Vector2(430, 0)
+
+[node name="Rango" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rango"]
+shape = SubResource("CircleShape2D_4mqvj")
+
+[node name="Detencion" type="Timer" parent="."]
+wait_time = 0.039
+autostart = true
+
+[connection signal="area_entered" from="Rango" to="." method="_on_rango_area_entered"]
+[connection signal="timeout" from="Detencion" to="." method="_on_detencion_timeout"]

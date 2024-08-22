@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://bost23h4ed4m8" path="res://Mapas/tilemapes.svg" id="1_cwkm4"]
 [ext_resource type="Script" path="res://Escenas/Mapa1.gd" id="1_xyh3x"]
-[ext_resource type="PackedScene" uid="uid://b14n7xctul1of" path="res://Personaje/tomate.tscn" id="2_86vj7"]
 [ext_resource type="Texture2D" uid="uid://b2muekgdp8qva" path="res://Mapas/tilemapes (1).svg" id="2_oylxd"]
 [ext_resource type="Script" path="res://Escenas/Mapa.gd" id="4_eh5g8"]
-[ext_resource type="PackedScene" uid="uid://bfjbwmm1f2psn" path="res://Personaje/naranja.tscn" id="4_fahjx"]
 [ext_resource type="Script" path="res://Escenas/Torres.gd" id="5_cujmf"]
-[ext_resource type="PackedScene" uid="uid://bnshfmv8c0p33" path="res://Personaje/choclo.tscn" id="5_vvrek"]
-[ext_resource type="PackedScene" uid="uid://dj53ihnuu7dvs" path="res://Personaje/morron.tscn" id="6_osdmg"]
+[ext_resource type="PackedScene" uid="uid://bnshfmv8c0p33" path="res://Personaje/Choclo.tscn" id="5_vvrek"]
+[ext_resource type="PackedScene" uid="uid://hij5ux6lf0kd" path="res://Personaje/Morron.tscn" id="7_4iucw"]
+[ext_resource type="PackedScene" uid="uid://bp3j2i2kku2hr" path="res://Personaje/Naranja.tscn" id="8_rhmxi"]
+[ext_resource type="PackedScene" uid="uid://cqqa234c1tocs" path="res://Personaje/Tomate.tscn" id="9_m0tpr"]
 [ext_resource type="Texture2D" uid="uid://1cb1dbrr55iu" path="res://icon.svg" id="10_cliks"]
 [ext_resource type="Script" path="res://Scripts/Camino_Enemigos.gd" id="10_wxwc6"]
 
@@ -127,17 +127,17 @@ text = "Choclo"
 [node name="Torres" type="Node2D" parent="."]
 script = ExtResource("5_cujmf")
 
-[node name="Morron" parent="Torres" instance=ExtResource("6_osdmg")]
-position = Vector2(238, 378)
-
-[node name="Naranja" parent="Torres" instance=ExtResource("4_fahjx")]
-position = Vector2(911, 244)
-
-[node name="Tomate" parent="Torres" instance=ExtResource("2_86vj7")]
-position = Vector2(386, 481)
-
 [node name="Choclo" parent="Torres" instance=ExtResource("5_vvrek")]
-position = Vector2(526, 245)
+position = Vector2(170, 247)
+
+[node name="Morron" parent="Torres" instance=ExtResource("7_4iucw")]
+position = Vector2(385, 270)
+
+[node name="Naranja" parent="Torres" instance=ExtResource("8_rhmxi")]
+position = Vector2(481, 472)
+
+[node name="Tomate" parent="Torres" instance=ExtResource("9_m0tpr")]
+position = Vector2(216, 476)
 
 [node name="Camino_Enemigos" type="Node2D" parent="."]
 script = ExtResource("10_wxwc6")
@@ -150,13 +150,13 @@ position = Vector2(-11, 312)
 rotation = 0.0221483
 loop = false
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Camino_Enemigos/Path2D/PathFollow2D"]
+[node name="Enemigo1" type="Area2D" parent="Camino_Enemigos/Path2D/PathFollow2D" groups=["Enemigos"]]
 
-[node name="Sprite2D" type="Sprite2D" parent="Camino_Enemigos/Path2D/PathFollow2D/CharacterBody2D"]
+[node name="Enemigo" type="Sprite2D" parent="Camino_Enemigos/Path2D/PathFollow2D/Enemigo1"]
 position = Vector2(-7.88731, 1.66187)
 scale = Vector2(0.351928, 0.325827)
 texture = ExtResource("10_cliks")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camino_Enemigos/Path2D/PathFollow2D/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camino_Enemigos/Path2D/PathFollow2D/Enemigo1"]
 position = Vector2(-9.23191, 1.65466)
 shape = SubResource("RectangleShape2D_4hjpc")

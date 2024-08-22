@@ -1,1 +1,1 @@
-extends "res://Scripts/Torres/Torres.gd"
+extends Node2D
