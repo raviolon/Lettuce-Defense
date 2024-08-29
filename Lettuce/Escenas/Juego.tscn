@@ -123,10 +123,10 @@ text = "Choclo"
 script = ExtResource("5_cujmf")
 
 [node name="Choclo" parent="Torres" instance=ExtResource("5_vvrek")]
-position = Vector2(170, 247)
+position = Vector2(180, 246)
 
 [node name="Morron" parent="Torres" instance=ExtResource("7_4iucw")]
-position = Vector2(385, 270)
+position = Vector2(621, 180)
 
 [node name="Naranja" parent="Torres" instance=ExtResource("8_rhmxi")]
 position = Vector2(481, 472)

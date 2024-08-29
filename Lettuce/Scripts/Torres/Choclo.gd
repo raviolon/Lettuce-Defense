@@ -3,6 +3,7 @@ extends Node2D
 var municion = preload("res://Escenas/Balas.tscn")
 var shoot = true
 var target_position = null
+var velocidad = 10
 
 func _process(delta):
 	_alert()
@@ -10,9 +11,9 @@ func _process(delta):
 		$Verdura.look_at(target_position)
 		var b = municion.instantiate()
 		b.global_position = global_position
-		b.rotation = $Verdura.rotation
+		b.rotation = $Verdura.global_rotation 
 		get_tree().current_scene.add_child(b)
-		b.global_position = $Verdura/Position2D
+		b.global_position = target_position
 		target_position = null
 		shoot = false  # Desactiva el disparo después de disparar
 
