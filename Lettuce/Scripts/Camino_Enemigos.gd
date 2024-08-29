@@ -15,4 +15,5 @@ func _on_enemigo_1_area_entered(area: Area2D) -> void:
 
 func _vida():
 	if vida <= 0:
+		Global.cash += 100
 		queue_free()
