@@ -153,5 +153,3 @@ offset_top = 695.0
 offset_right = 182.0
 offset_bottom = 747.0
 text = "Nivel:"
-
-[node name="Timer" type="Timer" parent="."]

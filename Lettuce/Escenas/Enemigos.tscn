@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo17e0kap5o3k"]
+
+[ext_resource type="Texture2D" uid="uid://1cb1dbrr55iu" path="res://icon.svg" id="1_lp0pa"]
+[ext_resource type="Script" path="res://Scripts/Camino_Enemigos.gd" id="1_pj2dd"]
+
+[sub_resource type="Curve2D" id="Curve2D_gf71e"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -11, 312, 0, 0, 0, 0, 305, 319, 0, 0, 0, 0, 313, 544, 0, 0, 0, 0, 648, 551, 0, 0, 0, 0, 641, 313, 0, 0, 0, 0, 462, 312, 0, 0, 0, 0, 462, 123, 0, 0, 0, 0, 741, 125, 0, 0, 0, 0, 745, 165, 0, 0, 0, 0, 836, 170, 0, 0, 0, 0, 838, 307, 0, 0, 0, 0, 984, 315, 0, 0, 0, 0, 988, 166, 0, 0, 0, 0, 1072, 168)
+}
+point_count = 14
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kt668"]
+size = Vector2(47.4757, 42.0593)
+
+[node name="Enemigos" type="Node2D"]
+script = ExtResource("1_pj2dd")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_gf71e")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-11, 312)
+rotation = 0.0221483
+loop = false
+
+[node name="Enemigo1" type="Area2D" parent="Path2D/PathFollow2D" groups=["Enemigos"]]
+
+[node name="Enemigo" type="Sprite2D" parent="Path2D/PathFollow2D/Enemigo1"]
+position = Vector2(-7.88731, 1.66187)
+scale = Vector2(0.351928, 0.325827)
+texture = ExtResource("1_lp0pa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Enemigo1"]
+position = Vector2(-9.23191, 1.65466)
+shape = SubResource("RectangleShape2D_kt668")
+
+[connection signal="area_entered" from="Path2D/PathFollow2D/Enemigo1" to="." method="_on_enemigo_1_area_entered"]

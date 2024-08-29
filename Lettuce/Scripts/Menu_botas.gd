@@ -23,4 +23,3 @@ func _on_menu_principal_pressed():
 
 func _process(delta):
 	testEsc()
-

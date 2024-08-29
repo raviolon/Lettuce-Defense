@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://4mu7b7cpdsyd"]
+[gd_scene load_steps=15 format=3 uid="uid://4mu7b7cpdsyd"]
 
 [ext_resource type="Texture2D" uid="uid://bost23h4ed4m8" path="res://Mapas/tilemapes.svg" id="1_cwkm4"]
 [ext_resource type="Script" path="res://Escenas/Mapa1.gd" id="1_xyh3x"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bp3j2i2kku2hr" path="res://Personaje/naranja.tscn" id="8_rhmxi"]
 [ext_resource type="PackedScene" uid="uid://cqqa234c1tocs" path="res://Personaje/tomate.tscn" id="9_m0tpr"]
 [ext_resource type="PackedScene" uid="uid://bo17e0kap5o3k" path="res://Escenas/Enemigos.tscn" id="11_oo1wv"]
-[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="12_l1jpe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5rcg"]
 texture = ExtResource("1_cwkm4")
@@ -136,22 +135,3 @@ position = Vector2(481, 472)
 position = Vector2(216, 476)
 
 [node name="Enemigos" parent="." instance=ExtResource("11_oo1wv")]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("12_l1jpe")
-
-[node name="Dinero" type="Label" parent="CanvasLayer"]
-offset_left = 1.0
-offset_top = 729.0
-offset_right = 206.0
-offset_bottom = 768.0
-text = "Dinero: "
-
-[node name="Nivel" type="Label" parent="CanvasLayer"]
-offset_left = -1.0
-offset_top = 695.0
-offset_right = 182.0
-offset_bottom = 747.0
-text = "Nivel:"
-
-[node name="Timer" type="Timer" parent="."]
