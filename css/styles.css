@@ -12,6 +12,48 @@
     height: 125px;
 
 }
+.santiaguin {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    margin-left: 0; 
+    margin-right: auto; 
+    margin-left: auto; 
+    padding: 20px; 
+    font-family: 'Arial', sans-serif; 
+    font-size: 20px;
+    color: #333; 
+    border-radius: 10px
+} 
+
+.matematica {
+    margin-top: 2.5%
+}
+
+.matematicas {
+    margin-top: 1%
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif; 
+}
+
+.romerin {
+    font-size: 55px;
+}
+
+.romerines {
+    font-size: 25px;
+}
+
+.dos_ymedio {
+    display: flex;
+    justify-content: center;
+}
+
 
 .uno {
     color: rgb(255, 255, 255)
@@ -19,11 +61,13 @@
 
 .dos {
     color: rgb(112, 191, 110);
+    display: flex;
+    justify-content: center;
 }
 
 .btn {
     background-color: rgb(112, 191, 110);
-    color: rgb(28, 29, 23);
+    color: white;
     padding: 10px;
     border-radius: 30px 30px 30px 30px;
     height: 50px;
@@ -195,10 +239,12 @@ a:hover {
 .content {
     background-color: black;
     color: white; 
-    padding: 20px; 
+    
 }
 .hero {
-    padding: 50px 20px;
+    display: flex;
+    justify-content: left;
+    padding: 1%;
 }
 
 .hero h1 {
@@ -212,10 +258,10 @@ a:hover {
 .hero .btn {
     background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
+   
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 20px;
+    
     display: inline-block;
 }
 
@@ -240,7 +286,7 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ajusta la altura según sea necesario */
+    height: 100vh;
 }
 
 .download-btn {
@@ -249,19 +295,92 @@ a:hover {
     align-items: center;
     background-color: #4CAF50;
     color: white;
-    width: 150px;  /* Ajusta el tamaño del botón */
+    width: 150px;  
     height: 150px; 
-    text-align: center;  /* Centra horizontalmente el texto dentro del botón */
+    text-align: center;  
     text-decoration: none;
-    font-size: 1.2em; /* Ajusta el tamaño del texto según sea necesario */
-    border-radius: 10px; /* Opcional: redondear las esquinas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: añadir una sombra */
+    font-size: 1.2em; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    
 }
 
 .download-btn:hover {
-    background-color: #45a049; /* Cambia el color al pasar el cursor */
+    background-color: #45a049; 
 }
 .imagen-feature {
 width: 600px;
 height: 600px;
+margin:3%;
+
+}
+
+.download {
+
+    display:flex;
+    justify-content: center;
+    padding:none;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: space-between; /* Espacio igual entre imágenes y los márgenes laterales */
+    align-items: center; /* Alinea verticalmente las imágenes */
+    width: 80%; /* Ajusta el ancho del contenedor según tus necesidades */
+    max-width: 1200px; /* Ancho máximo para no hacer el contenedor demasiado ancho */
+}
+
+/* Estilo para los elementos de la imagen */
+.feature-item {
+    flex: 1; /* Hace que cada item ocupe el mismo espacio */
+    display: flex;
+    justify-content: center; /* Centra la imagen dentro del item */
+}
+
+/* Estilo para las imágenes */
+.imagen-feature {
+    max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    display: block; /* Elimina el espacio debajo de la imagen */
+}
+
+.feature-item {
+    position: relative;
+    display: inline-block;
+}
+
+.imagen-feature {
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.imagen-feature:hover {
+    opacity: 0.3; /* Cambia el valor de opacidad según tu preferencia */
+}
+
+.imagen-feature:hover + .texto-overlay {
+    opacity: 1;
+}
+
+.texto-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Cambia el color del texto según tu preferencia */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    width: 100%; /* Ajusta el ancho del overlay según tu preferencia */
+}
+
+
+
+
+
+.feature-item:hover .texto-overlay {
+    opacity: 1;
 }
