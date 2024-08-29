@@ -16,7 +16,7 @@ func _process(delta):
 		b.global_position = target_position
 		target_position = null
 		shoot = false  # Desactiva el disparo después de disparar
-
+		
 func _on_rango_area_entered(area):
 	if shoot:
 		if area.is_in_group("Enemigos"):

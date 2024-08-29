@@ -1,7 +1,7 @@
 extends Area2D
 
 const DOWN = Vector2.DOWN
-var velocidad: int = 10
+var velocidad: int = 1
 
 func _physics_process(delta: float) -> void:
 	var move = DOWN.rotated(rotation) * velocidad

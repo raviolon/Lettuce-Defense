@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo17e0kap5o3k"]
+[gd_scene load_steps=6 format=3 uid="uid://bo17e0kap5o3k"]
 
 [ext_resource type="Texture2D" uid="uid://1cb1dbrr55iu" path="res://icon.svg" id="1_lp0pa"]
 [ext_resource type="Script" path="res://Scripts/Camino_Enemigos.gd" id="1_pj2dd"]
+[ext_resource type="Script" path="res://Scripts/enemigo_1.gd" id="2_k8fg3"]
 
 [sub_resource type="Curve2D" id="Curve2D_gf71e"]
 bake_interval = 0.01
@@ -25,6 +26,7 @@ rotation = 0.0221483
 loop = false
 
 [node name="Enemigo1" type="Area2D" parent="Path2D/PathFollow2D" groups=["Enemigos"]]
+script = ExtResource("2_k8fg3")
 
 [node name="Enemigo" type="Sprite2D" parent="Path2D/PathFollow2D/Enemigo1"]
 position = Vector2(-7.88731, 1.66187)
