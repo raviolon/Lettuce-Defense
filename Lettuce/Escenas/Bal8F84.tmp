@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvrdf3bo2g6j5"]
+
+[ext_resource type="Texture2D" uid="uid://dlipimtk06kj5" path="res://Personaje/Bala/bala.png" id="1_m3ots"]
+[ext_resource type="Script" path="res://Escenas/Scripts.gd" id="1_vuls4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eugy3"]
+size = Vector2(6, 4)
+
+[node name="Balas" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_vuls4")
+
+[node name="Bala" type="Sprite2D" parent="Area2D"]
+position = Vector2(-5, -4.5)
+scale = Vector2(0.0944444, 0.0875)
+texture = ExtResource("1_m3ots")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_eugy3")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-5, -4.5)
+scale = Vector2(1.7, 1.05)
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="Area2D" method="_on_visible_on_screen_notifier_2d_screen_exited"]

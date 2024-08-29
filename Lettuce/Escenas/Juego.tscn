@@ -1,16 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://4mu7b7cpdsyd"]
+[gd_scene load_steps=15 format=3 uid="uid://4mu7b7cpdsyd"]
 
 [ext_resource type="Texture2D" uid="uid://bost23h4ed4m8" path="res://Mapas/tilemapes.svg" id="1_cwkm4"]
 [ext_resource type="Script" path="res://Escenas/Mapa1.gd" id="1_xyh3x"]
 [ext_resource type="Texture2D" uid="uid://b2muekgdp8qva" path="res://Mapas/tilemapes (1).svg" id="2_oylxd"]
 [ext_resource type="Script" path="res://Escenas/Mapa.gd" id="4_eh5g8"]
 [ext_resource type="Script" path="res://Escenas/Torres.gd" id="5_cujmf"]
-[ext_resource type="PackedScene" uid="uid://bnshfmv8c0p33" path="res://Personaje/Choclo.tscn" id="5_vvrek"]
-[ext_resource type="PackedScene" uid="uid://hij5ux6lf0kd" path="res://Personaje/Morron.tscn" id="7_4iucw"]
-[ext_resource type="PackedScene" uid="uid://bp3j2i2kku2hr" path="res://Personaje/Naranja.tscn" id="8_rhmxi"]
-[ext_resource type="PackedScene" uid="uid://cqqa234c1tocs" path="res://Personaje/Tomate.tscn" id="9_m0tpr"]
-[ext_resource type="Texture2D" uid="uid://1cb1dbrr55iu" path="res://icon.svg" id="10_cliks"]
-[ext_resource type="Script" path="res://Scripts/Camino_Enemigos.gd" id="10_wxwc6"]
+[ext_resource type="Script" path="res://Scripts/sig_nivel.gd" id="5_oai3j"]
+[ext_resource type="PackedScene" uid="uid://bnshfmv8c0p33" path="res://Personaje/choclo.tscn" id="5_vvrek"]
+[ext_resource type="PackedScene" uid="uid://hij5ux6lf0kd" path="res://Personaje/morron.tscn" id="7_4iucw"]
+[ext_resource type="PackedScene" uid="uid://bp3j2i2kku2hr" path="res://Personaje/naranja.tscn" id="8_rhmxi"]
+[ext_resource type="PackedScene" uid="uid://cqqa234c1tocs" path="res://Personaje/tomate.tscn" id="9_m0tpr"]
+[ext_resource type="PackedScene" uid="uid://bo17e0kap5o3k" path="res://Escenas/Enemigos.tscn" id="11_oo1wv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5rcg"]
 texture = ExtResource("1_cwkm4")
@@ -44,16 +44,6 @@ texture = ExtResource("2_oylxd")
 [sub_resource type="TileSet" id="TileSet_ye2k6"]
 sources/0 = SubResource("TileSetAtlasSource_s5rcg")
 sources/1 = SubResource("TileSetAtlasSource_uaayk")
-
-[sub_resource type="Curve2D" id="Curve2D_x2gsy"]
-bake_interval = 0.01
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -11, 312, 0, 0, 0, 0, 305, 319, 0, 0, 0, 0, 313, 544, 0, 0, 0, 0, 648, 551, 0, 0, 0, 0, 641, 313, 0, 0, 0, 0, 462, 312, 0, 0, 0, 0, 462, 123, 0, 0, 0, 0, 741, 125, 0, 0, 0, 0, 745, 165, 0, 0, 0, 0, 836, 170, 0, 0, 0, 0, 838, 307, 0, 0, 0, 0, 984, 315, 0, 0, 0, 0, 988, 166, 0, 0, 0, 0, 1072, 168)
-}
-point_count = 14
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hjpc"]
-size = Vector2(47.4757, 42.0593)
 
 [node name="Juego" type="Node2D"]
 
@@ -106,6 +96,11 @@ layout_mode = 2
 alignment = 1
 metadata/_edit_lock_ = true
 
+[node name="Sig_Nivel" type="Button" parent="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer" groups=["Construir"]]
+layout_mode = 2
+text = "Siguiente Nivel"
+script = ExtResource("5_oai3j")
+
 [node name="Tomate" type="Button" parent="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer" groups=["Construir"]]
 layout_mode = 2
 text = "Tomate"
@@ -139,24 +134,4 @@ position = Vector2(481, 472)
 [node name="Tomate" parent="Torres" instance=ExtResource("9_m0tpr")]
 position = Vector2(216, 476)
 
-[node name="Camino_Enemigos" type="Node2D" parent="."]
-script = ExtResource("10_wxwc6")
-
-[node name="Path2D" type="Path2D" parent="Camino_Enemigos"]
-curve = SubResource("Curve2D_x2gsy")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Camino_Enemigos/Path2D"]
-position = Vector2(-11, 312)
-rotation = 0.0221483
-loop = false
-
-[node name="Enemigo1" type="Area2D" parent="Camino_Enemigos/Path2D/PathFollow2D" groups=["Enemigos"]]
-
-[node name="Enemigo" type="Sprite2D" parent="Camino_Enemigos/Path2D/PathFollow2D/Enemigo1"]
-position = Vector2(-7.88731, 1.66187)
-scale = Vector2(0.351928, 0.325827)
-texture = ExtResource("10_cliks")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camino_Enemigos/Path2D/PathFollow2D/Enemigo1"]
-position = Vector2(-9.23191, 1.65466)
-shape = SubResource("RectangleShape2D_4hjpc")
+[node name="Enemigos" parent="." instance=ExtResource("11_oo1wv")]
