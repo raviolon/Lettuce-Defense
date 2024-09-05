@@ -5,3 +5,6 @@ func giro():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	giro()
+	
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	pass # Replace with function body.

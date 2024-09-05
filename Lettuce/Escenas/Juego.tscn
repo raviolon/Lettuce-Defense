@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://4mu7b7cpdsyd"]
+[gd_scene load_steps=17 format=3 uid="uid://4mu7b7cpdsyd"]
 
 [ext_resource type="Texture2D" uid="uid://bost23h4ed4m8" path="res://Mapas/tilemapes.svg" id="1_cwkm4"]
 [ext_resource type="Script" path="res://Escenas/Mapa1.gd" id="1_xyh3x"]
@@ -45,6 +45,9 @@ texture = ExtResource("2_oylxd")
 [sub_resource type="TileSet" id="TileSet_ye2k6"]
 sources/0 = SubResource("TileSetAtlasSource_s5rcg")
 sources/1 = SubResource("TileSetAtlasSource_uaayk")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj64n"]
+size = Vector2(87.8892, 100.314)
 
 [node name="Juego" type="Node2D"]
 
@@ -135,6 +138,15 @@ position = Vector2(481, 472)
 [node name="Tomate" parent="Torres" instance=ExtResource("9_m0tpr")]
 position = Vector2(216, 476)
 
+[node name="coonstruct" type="Area2D" parent="Torres"]
+rotation = 0.785397
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torres/coonstruct"]
+position = Vector2(301.156, 46.8195)
+rotation = 0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_vj64n")
+
 [node name="Enemigos" parent="." instance=ExtResource("11_oo1wv")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -155,3 +167,5 @@ offset_bottom = 747.0
 text = "Nivel:"
 
 [node name="Timer" type="Timer" parent="."]
+
+[connection signal="input_event" from="Torres/coonstruct" to="Torres" method="_on_coonstruct_input_event"]

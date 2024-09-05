@@ -32,5 +32,11 @@ shape = SubResource("CircleShape2D_4mqvj")
 wait_time = 0.039
 autostart = true
 
+[node name="construc" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="construc"]
+shape = SubResource("RectangleShape2D_n0ryw")
+
 [connection signal="area_entered" from="Rango" to="." method="_on_rango_area_entered"]
 [connection signal="timeout" from="Detencion" to="." method="_on_detencion_timeout"]
+[connection signal="input_event" from="construc" to="." method="_on_construc_input_event"]
