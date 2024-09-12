@@ -22,6 +22,7 @@ func _process(delta):
 		shoot = false  # Desactiva el disparo después de disparar
 	if construccion == true :
 		self.global_position = get_global_mouse_position()
+		shoot = false
 
 func _on_rango_area_entered(area):
 	if shoot:

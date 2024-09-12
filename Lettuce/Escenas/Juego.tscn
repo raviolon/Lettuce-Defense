@@ -72,7 +72,7 @@ curve = SubResource("Curve2D_rp0jv")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Mapa1/Mapa/Path2D"]
 position = Vector2(0, 103.333)
-rotation = -0.00322582
+rotation = -0.00322258
 
 [node name="Enemigos" parent="Mapa1/Mapa/Path2D/PathFollow2D" instance=ExtResource("12_tlant")]
 scale = Vector2(0.38, 0.38)
