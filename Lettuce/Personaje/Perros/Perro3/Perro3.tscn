@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://biexd8d7sutge"]
+
+[ext_resource type="Script" path="res://Personaje/Perros/Perro1/Camino_Enemigos.gd" id="1_cjm4b"]
+[ext_resource type="Texture2D" uid="uid://cckbbua2qpmuy" path="res://Personaje/Perros/Perro3/coki.svg" id="2_h48ag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kt668"]
+size = Vector2(72, 38)
+
+[node name="Enemigos" type="Node2D"]
+script = ExtResource("1_cjm4b")
+
+[node name="Enemigo1" type="Area2D" parent="." groups=["Enemigos"]]
+scale = Vector2(0.5, 0.5)
+
+[node name="Enemigo" type="Sprite2D" parent="Enemigo1"]
+position = Vector2(1, -5)
+scale = Vector2(0.062519, 0.0578822)
+texture = ExtResource("2_h48ag")
+hframes = 2
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemigo1"]
+position = Vector2(-3, -5)
+shape = SubResource("RectangleShape2D_kt668")
+
+[connection signal="area_entered" from="Enemigo1" to="." method="_on_enemigo_1_area_entered"]
