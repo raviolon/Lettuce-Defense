@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://tlgjcrq3w8lo"]
+
+[ext_resource type="Script" path="res://Scripts/Torres/Choclo.gd" id="1_m741v"]
+[ext_resource type="Texture2D" uid="uid://bhfso6urft85k" path="res://Personaje/Morron/Morron rojo.jpg" id="2_sm1vd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ryw"]
+size = Vector2(101, 88)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4mqvj"]
+radius = 85.8662
+
+[node name="Morron" type="CharacterBody2D" groups=["Torres"]]
+position = Vector2(538, 331)
+script = ExtResource("1_m741v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n0ryw")
+
+[node name="Verdura" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.240331)
+texture = ExtResource("2_sm1vd")
+
+[node name="Mira" type="Marker2D" parent="Verdura"]
+position = Vector2(430, 0)
+
+[node name="Rango" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rango"]
+shape = SubResource("CircleShape2D_4mqvj")
+
+[node name="Detencion" type="Timer" parent="."]
+wait_time = 0.039
+autostart = true
+
+[connection signal="area_entered" from="Rango" to="." method="_on_rango_area_entered"]
+[connection signal="timeout" from="Detencion" to="." method="_on_detencion_timeout"]

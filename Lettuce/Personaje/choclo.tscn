@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwa73gl3q02w0"]
+
+[ext_resource type="Script" path="res://Scripts/Torres/Choclo.gd" id="1_oqc3r"]
+[ext_resource type="Texture2D" uid="uid://66tefd1p2y5x" path="res://Personaje/Choclo/297.jpg" id="2_rci2h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ryw"]
+size = Vector2(101, 88)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4mqvj"]
+radius = 85.8662
+
+[node name="Choclo" type="CharacterBody2D" groups=["Torres"]]
+position = Vector2(538, 331)
+script = ExtResource("1_oqc3r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n0ryw")
+
+[node name="Verdura" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.240331)
+texture = ExtResource("2_rci2h")
+
+[node name="Mira" type="Marker2D" parent="Verdura"]
+position = Vector2(430, 0)
+
+[node name="Rango" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rango"]
+shape = SubResource("CircleShape2D_4mqvj")
+
+[node name="Detencion" type="Timer" parent="."]
+wait_time = 0.039
+autostart = true
+
+[node name="construc" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="construc"]
+shape = SubResource("RectangleShape2D_n0ryw")
+
+[connection signal="area_entered" from="Rango" to="." method="_on_rango_area_entered"]
+[connection signal="timeout" from="Detencion" to="." method="_on_detencion_timeout"]
+[connection signal="input_event" from="construc" to="." method="_on_construc_input_event"]
