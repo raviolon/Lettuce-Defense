@@ -40,12 +40,12 @@ func _on_detencion_timeout():
 	target_position = null
 
 func _on_construc_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
-			construccion = true
-			print(1)
-			$".".modulate = Color("7a7a7a")
-		if event.is_released() and event.button_index == MOUSE_BUTTON_LEFT:
-			construccion = false
-			$".".modulate = Color("ffffff")
+		if event is InputEventMouseButton:
+			if event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+				construccion = true
+				print(1)
+				$".".modulate = Color("7a7a7a")
+			if event.is_released() and event.button_index == MOUSE_BUTTON_LEFT:
+				construccion = false
+				$".".modulate = Color("ffffff")
 			
