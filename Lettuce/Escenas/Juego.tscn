@@ -148,17 +148,23 @@ texture = ExtResource("7_hsqkx")
 [node name="Torres" type="Node2D" parent="."]
 script = ExtResource("5_cujmf")
 
-[node name="Choclo" parent="Torres" instance=ExtResource("5_vvrek")]
+[node name="Choclo2" parent="Torres" instance=ExtResource("5_vvrek")]
 position = Vector2(167, 263)
 
+[node name="Choclo" parent="Torres" instance=ExtResource("5_vvrek")]
+position = Vector2(546, 257)
+
 [node name="Morron" parent="Torres" instance=ExtResource("7_4iucw")]
+visible = false
 position = Vector2(621, 180)
 
 [node name="Naranja" parent="Torres" instance=ExtResource("8_rhmxi")]
-position = Vector2(481, 472)
+visible = false
+position = Vector2(493, 485)
 
 [node name="Tomate" parent="Torres" instance=ExtResource("9_m0tpr")]
-position = Vector2(216, 476)
+visible = false
+position = Vector2(240, 476)
 
 [node name="coonstruct" type="Area2D" parent="Torres"]
 rotation = 0.785397
