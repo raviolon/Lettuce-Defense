@@ -1,11 +1,10 @@
-extends Node2D
-@onready var path_follow : PathFollow2D = $".."
+extends PathFollow2D
 @export var speed = 100
-var vida = 1000
+var vida = 10
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	path_follow.progress += delta * speed	
+func _process(delta):
+	progress+=speed*delta		
 	_vida()
 	print(vida)
 
