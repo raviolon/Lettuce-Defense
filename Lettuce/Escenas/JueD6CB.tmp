@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://4mu7b7cpdsyd"]
+[gd_scene load_steps=19 format=3 uid="uid://4mu7b7cpdsyd"]
 
 [ext_resource type="Texture2D" uid="uid://bost23h4ed4m8" path="res://Mapas/tilemapes.svg" id="1_cwkm4"]
 [ext_resource type="Script" path="res://Escenas/Mapa1.gd" id="1_xyh3x"]
@@ -12,9 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bp3j2i2kku2hr" path="res://Personaje/Naranja/naranja.tscn" id="8_rhmxi"]
 [ext_resource type="PackedScene" uid="uid://cqqa234c1tocs" path="res://Personaje/Tomate/tomate.tscn" id="9_m0tpr"]
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="12_l1jpe"]
-[ext_resource type="Texture2D" uid="uid://blxps1u6qvq6n" path="res://Personaje/Game_Over/juego.png" id="15_w6p8k"]
-[ext_resource type="Texture2D" uid="uid://d0b1clvkucfyu" path="res://Personaje/Lechuga/lechuga.jpg" id="16_0b3ys"]
-[ext_resource type="Script" path="res://Scripts/vida.gd" id="16_71eba"]
+[ext_resource type="PackedScene" uid="uid://dw7oj7k8y0lag" path="res://Personaje/Perros/Perro1/Perro1.tscn" id="12_tlant"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5rcg"]
 texture = ExtResource("1_cwkm4")
@@ -58,9 +56,6 @@ point_count = 14
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vj64n"]
 size = Vector2(87.8892, 100.314)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwf23"]
-size = Vector2(52, 63.5)
-
 [node name="Juego" type="Node2D"]
 
 [node name="Mapa1" type="Node2D" parent="."]
@@ -75,6 +70,14 @@ script = ExtResource("4_eh5g8")
 
 [node name="Path2D" type="Path2D" parent="Mapa1/Mapa"]
 curve = SubResource("Curve2D_rp0jv")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa1/Mapa/Path2D"]
+position = Vector2(0, 103.333)
+rotation = -0.00322258
+
+[node name="Enemigos" parent="Mapa1/Mapa/Path2D/PathFollow2D" instance=ExtResource("12_tlant")]
+position = Vector2(-9.33759, 1.30359)
+scale = Vector2(0.38, 0.38)
 
 [node name="UI" type="CanvasLayer" parent="Mapa1/Mapa"]
 
@@ -143,30 +146,6 @@ position = Vector2(685, 721)
 scale = Vector2(0.365741, 0.398148)
 texture = ExtResource("7_hsqkx")
 
-[node name="GAMEOVER" type="CanvasLayer" parent="Mapa1"]
-
-[node name="ColorRect" type="ColorRect" parent="Mapa1/GAMEOVER"]
-visible = false
-offset_left = 11.0
-offset_top = 4.0
-offset_right = 1054.0
-offset_bottom = 647.0
-tooltip_text = "GAME OVER"
-color = Color(0.552941, 0, 0.556863, 0.584314)
-
-[node name="Sprite2D" type="Sprite2D" parent="Mapa1/GAMEOVER/ColorRect"]
-position = Vector2(509, 250)
-scale = Vector2(2.16667, 1.77542)
-texture = ExtResource("15_w6p8k")
-
-[node name="Button" type="Button" parent="Mapa1/GAMEOVER/ColorRect"]
-layout_mode = 0
-offset_left = 346.0
-offset_top = 510.0
-offset_right = 657.0
-offset_bottom = 557.0
-text = "NUEVO JUEGO"
-
 [node name="Torres" type="Node2D" parent="."]
 script = ExtResource("5_cujmf")
 
@@ -214,28 +193,5 @@ offset_right = 182.0
 offset_bottom = 747.0
 text = "Nivel:"
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-script = ExtResource("16_71eba")
-
-[node name="Vida" type="Label" parent="CanvasLayer2"]
-offset_left = 754.0
-offset_top = 674.0
-offset_right = 959.0
-offset_bottom = 713.0
-text = "Vida: 200"
-
-[node name="Area2D2" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(1034, 166)
-shape = SubResource("RectangleShape2D_kwf23")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
-position = Vector2(1025, 165)
-scale = Vector2(0.131071, 0.125942)
-texture = ExtResource("16_0b3ys")
-
 [connection signal="pressed" from="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer/Choclo" to="Mapa1" method="_on_choclo_pressed"]
-[connection signal="pressed" from="Mapa1/GAMEOVER/ColorRect/Button" to="Mapa1" method="_on_button_pressed"]
 [connection signal="input_event" from="Torres/coonstruct" to="Torres" method="_on_coonstruct_input_event"]
-[connection signal="area_entered" from="Area2D2" to="Mapa1" method="_on_area_2d_2_area_entered"]

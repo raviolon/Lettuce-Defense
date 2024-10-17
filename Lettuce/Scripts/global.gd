@@ -1,4 +1,5 @@
 extends Node
 
-var nivel = 5
+var nivel = 1
 var cash = 100
+var vida = 10

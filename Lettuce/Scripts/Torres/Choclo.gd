@@ -48,4 +48,3 @@ func _on_construc_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 			if event.is_released() and event.button_index == MOUSE_BUTTON_LEFT:
 				construccion = false
 				$".".modulate = Color("ffffff")
-			
