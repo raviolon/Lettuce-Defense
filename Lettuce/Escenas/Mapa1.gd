@@ -41,3 +41,21 @@ func _on_timer_timeout() -> void:
 	enemigos-=1
 	if enemigos<=0:
 		$"../Timer".stop()
+
+func _game_over():
+	if Global.vida <= 0:
+		$Mapa/GAMEOVER/ColorRect.visible = true
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if  area.is_in_group("Enemigos"):
+		Global.vida -= 1
+		_game_over()
+
+
+func _on_button_pressed() -> void:
+	get_tree().reload_current_scene()
+	$Mapa/GAMEOVER/ColorRect.visible = false
+	Global.vida = 10
+	Global.cash = 100
+	Global.nivel = 1
+	pass # Replace with function body.

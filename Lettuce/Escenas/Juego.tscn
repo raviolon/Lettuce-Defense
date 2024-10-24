@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://4mu7b7cpdsyd"]
+[gd_scene load_steps=18 format=3 uid="uid://4mu7b7cpdsyd"]
 
 [ext_resource type="Texture2D" uid="uid://bost23h4ed4m8" path="res://Mapas/tilemapes.svg" id="1_cwkm4"]
 [ext_resource type="Script" path="res://Escenas/Mapa1.gd" id="1_xyh3x"]
@@ -6,8 +6,11 @@
 [ext_resource type="Script" path="res://Escenas/Mapa.gd" id="4_eh5g8"]
 [ext_resource type="Script" path="res://Escenas/Torres.gd" id="5_cujmf"]
 [ext_resource type="Script" path="res://Scripts/sig_nivel.gd" id="5_oai3j"]
+[ext_resource type="Texture2D" uid="uid://blxps1u6qvq6n" path="res://Personaje/Game_Over/juego.png" id="7_0xho4"]
 [ext_resource type="Texture2D" uid="uid://5k50flxnqquw" path="res://Personaje/Tomate/tomate.svg" id="7_hsqkx"]
 [ext_resource type="PackedScene" uid="uid://cqqa234c1tocs" path="res://Personaje/Tomate/tomate.tscn" id="9_m0tpr"]
+[ext_resource type="Texture2D" uid="uid://d0b1clvkucfyu" path="res://Personaje/Lechuga/lechuga.jpg" id="10_585vg"]
+[ext_resource type="Script" path="res://Scripts/canvas_layer_2.gd" id="10_hl4pk"]
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="12_l1jpe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5rcg"]
@@ -48,6 +51,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 103.333, 0, 0, 0, 0, 10.6667, 103.333, 0, 0, 0, 0, 103.333, 103, 0, 0, 0, 0, 105.333, 181.333, 0, 0, 0, 0, 216.333, 183.667, 0, 0, 0, 0, 216.333, 104, 0, 0, 0, 0, 152.667, 103.333, 0, 0, 0, 0, 151.667, 40.3333, 0, 0, 0, 0, 248.667, 41, 0, 0, 0, 0, 248.667, 57.3333, 0, 0, 0, 0, 278.333, 57.3333, 0, 0, 0, 0, 278.667, 102, 0, 0, 0, 0, 326, 101.667, 0, 0, 0, 0, 327, 57.3333, 0, 0, 0, 0, 348, 57.3333)
 }
 point_count = 15
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkvfy"]
+size = Vector2(38, 39.6875)
 
 [node name="Juego" type="Node2D"]
 
@@ -131,6 +137,28 @@ position = Vector2(685, 721)
 scale = Vector2(0.365741, 0.398148)
 texture = ExtResource("7_hsqkx")
 
+[node name="GAMEOVER" type="CanvasLayer" parent="Mapa1/Mapa"]
+
+[node name="ColorRect" type="ColorRect" parent="Mapa1/Mapa/GAMEOVER"]
+visible = false
+offset_right = 1065.0
+offset_bottom = 665.0
+color = Color(1, 0.270588, 1, 0.737255)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa1/Mapa/GAMEOVER/ColorRect"]
+position = Vector2(538, 237)
+scale = Vector2(2.10345, 1.92797)
+texture = ExtResource("7_0xho4")
+
+[node name="Button" type="Button" parent="Mapa1/Mapa/GAMEOVER/ColorRect"]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 499.0
+offset_right = 612.0
+offset_bottom = 593.0
+text = "NUEVO JUEGO
+"
+
 [node name="Torres" type="Node2D" parent="."]
 script = ExtResource("5_cujmf")
 
@@ -154,9 +182,33 @@ offset_right = 182.0
 offset_bottom = 747.0
 text = "Nivel:"
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+script = ExtResource("10_hl4pk")
+
+[node name="Vida" type="Label" parent="CanvasLayer2"]
+offset_left = 754.0
+offset_top = 681.0
+offset_right = 937.0
+offset_bottom = 733.0
+text = "Vida:
+"
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
 autostart = true
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(1009, 163)
+scale = Vector2(0.0925, 0.0946328)
+texture = ExtResource("10_585vg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1017, 167)
+shape = SubResource("RectangleShape2D_mkvfy")
+
 [connection signal="pressed" from="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer/Choclo" to="Mapa1" method="_on_choclo_pressed"]
+[connection signal="pressed" from="Mapa1/Mapa/GAMEOVER/ColorRect/Button" to="Mapa1" method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="Mapa1" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="Mapa1" method="_on_area_2d_area_entered"]
