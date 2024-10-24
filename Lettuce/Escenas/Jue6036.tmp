@@ -1,0 +1,240 @@
+[gd_scene load_steps=22 format=3 uid="uid://4mu7b7cpdsyd"]
+
+[ext_resource type="Texture2D" uid="uid://bost23h4ed4m8" path="res://Mapas/tilemapes.svg" id="1_cwkm4"]
+[ext_resource type="Script" path="res://Escenas/Mapa1.gd" id="1_xyh3x"]
+[ext_resource type="Texture2D" uid="uid://b2muekgdp8qva" path="res://Mapas/tilemapes (1).svg" id="2_oylxd"]
+[ext_resource type="Script" path="res://Escenas/Mapa.gd" id="4_eh5g8"]
+[ext_resource type="Script" path="res://Escenas/Torres.gd" id="5_cujmf"]
+[ext_resource type="Script" path="res://Scripts/sig_nivel.gd" id="5_oai3j"]
+[ext_resource type="PackedScene" uid="uid://bnshfmv8c0p33" path="res://Personaje/Choclo/choclo.tscn" id="5_vvrek"]
+[ext_resource type="PackedScene" uid="uid://hij5ux6lf0kd" path="res://Personaje/Morron/morron.tscn" id="7_4iucw"]
+[ext_resource type="Texture2D" uid="uid://5k50flxnqquw" path="res://Personaje/Choclo/tomate.svg" id="7_hsqkx"]
+[ext_resource type="PackedScene" uid="uid://bp3j2i2kku2hr" path="res://Personaje/Naranja/naranja.tscn" id="8_rhmxi"]
+[ext_resource type="PackedScene" uid="uid://cqqa234c1tocs" path="res://Personaje/Tomate/tomate.tscn" id="9_m0tpr"]
+[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="12_l1jpe"]
+[ext_resource type="PackedScene" uid="uid://dw7oj7k8y0lag" path="res://Personaje/Perros/Perro1/Perro1.tscn" id="12_tlant"]
+[ext_resource type="Texture2D" uid="uid://d0b1clvkucfyu" path="res://Personaje/Lechuga/lechuga.jpg" id="16_0b3ys"]
+[ext_resource type="Script" path="res://Scripts/vida.gd" id="16_71eba"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5rcg"]
+texture = ExtResource("1_cwkm4")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:3/0 = 0
+4:2/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uaayk"]
+texture = ExtResource("2_oylxd")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ye2k6"]
+sources/0 = SubResource("TileSetAtlasSource_s5rcg")
+sources/1 = SubResource("TileSetAtlasSource_uaayk")
+
+[sub_resource type="Curve2D" id="Curve2D_rp0jv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 103.333, 0, 0, 0, 0, 103.333, 103, 0, 0, 0, 0, 105.333, 181.333, 0, 0, 0, 0, 216.333, 183.667, 0, 0, 0, 0, 216.333, 104, 0, 0, 0, 0, 152.667, 103.333, 0, 0, 0, 0, 151.667, 40.3333, 0, 0, 0, 0, 248.667, 41, 0, 0, 0, 0, 248.667, 57.3333, 0, 0, 0, 0, 278.333, 57.3333, 0, 0, 0, 0, 278.667, 102, 0, 0, 0, 0, 326, 101.667, 0, 0, 0, 0, 327, 57.3333, 0, 0, 0, 0, 348, 57.3333)
+}
+point_count = 14
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj64n"]
+size = Vector2(87.8892, 100.314)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwf23"]
+size = Vector2(52, 63.5)
+
+[node name="Juego" type="Node2D"]
+
+[node name="Mapa1" type="Node2D" parent="."]
+script = ExtResource("1_xyh3x")
+
+[node name="Mapa" type="TileMap" parent="Mapa1"]
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_ye2k6")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 262145, 0, 65536, 262145, 0, 131072, 262145, 0, 196608, 262145, 0, 262144, 262145, 0, 327680, 262145, 0, 393216, 131072, 0, 458752, 262145, 0, 524288, 262145, 0, 589824, 262145, 0, 655360, 262145, 0, 720896, 262145, 0, 786432, 262145, 0, 851968, 262145, 0, 1, 262145, 0, 65537, 262145, 0, 131073, 262145, 0, 196609, 262145, 0, 262145, 262145, 0, 327681, 262145, 0, 393217, 131072, 0, 458753, 262145, 0, 524289, 262145, 0, 589825, 262145, 0, 655361, 262144, 0, 720897, 262144, 0, 786433, 262144, 0, 851969, 262145, 0, 2, 131072, 1, 65538, 131072, 2, 131074, 131072, 2, 262146, 262145, 0, 327682, 262145, 0, 393218, 131072, 0, 458754, 262145, 0, 524290, 262145, 0, 589826, 262145, 0, 655362, 262145, 0, 720898, 262144, 0, 786434, 262144, 0, 851970, 262144, 0, 3, 196608, 1, 65539, 196608, 2, 131075, 196608, 2, 196611, 196608, 3, 262147, 262145, 0, 393219, 131072, 0, 458755, 262145, 0, 524291, 262145, 0, 589827, 262145, 0, 655363, 262145, 0, 720899, 262144, 0, 786435, 262144, 0, 851971, 262144, 0, 4, 196608, 1, 65540, 196608, 2, 131076, 196608, 2, 196612, 196608, 3, 262148, 262145, 0, 393220, 131072, 0, 458756, 262145, 0, 524292, 262145, 0, 589828, 262145, 0, 655364, 262145, 0, 720900, 262145, 0, 786436, 262144, 0, 851972, 262145, 0, 5, 262144, 1, 65541, 262144, 2, 131077, 262144, 2, 196613, 262144, 3, 262149, 262145, 0, 393221, 131072, 0, 458757, 262145, 0, 524293, 262145, 0, 589829, 262145, 0, 655365, 262145, 0, 720901, 262145, 0, 786437, 262145, 0, 851973, 262145, 0, 6, 262145, 0, 65542, 262145, 0, 131078, 262145, 0, 196614, 262145, 0, 262150, 262145, 0, 327686, 262145, 0, 393222, 65536, 0, 458758, 196608, 0, 524294, 196608, 0, 589830, 196608, 0, 655366, 196608, 0, 720902, 0, 1, 786438, 262145, 0, 851974, 262145, 0, 7, 262145, 0, 65543, 262145, 0, 131079, 262145, 0, 196615, 262145, 0, 262151, 262145, 0, 327687, 262145, 0, 393223, 262145, 0, 458759, 262145, 0, 524295, 262145, 0, 589831, 262145, 0, 655367, 262145, 0, 720903, 131072, 0, 786439, 262145, 0, 851975, 262145, 0, 8, 262145, 0, 65544, 262145, 0, 131080, 262145, 0, 196616, 262145, 0, 262152, 262145, 0, 327688, 262145, 0, 393224, 262145, 0, 458760, 262145, 0, 524296, 262145, 0, 589832, 262145, 0, 655368, 262145, 0, 720904, 131072, 0, 786440, 262145, 0, 851976, 262145, 0, 9, 262145, 0, 65545, 262145, 0, 131081, 0, 0, 196617, 196608, 0, 262153, 196608, 0, 327689, 196608, 0, 393225, 0, 1, 458761, 262145, 0, 524297, 262145, 0, 589833, 262145, 0, 655369, 262145, 0, 720905, 131072, 0, 786441, 262145, 0, 851977, 262145, 0, 10, 262145, 0, 65546, 262145, 0, 131082, 131072, 0, 196618, 262145, 0, 262154, 262145, 0, 327690, 262145, 0, 393226, 131072, 0, 458762, 262145, 0, 524298, 131072, 1, 589834, 131072, 3, 655370, 262145, 0, 720906, 131072, 0, 786442, 262145, 0, 851978, 262145, 0, 11, 262145, 0, 65547, 262145, 0, 131083, 131072, 0, 196619, 262145, 0, 262155, 262145, 0, 327691, 262145, 0, 393227, 131072, 0, 458763, 262145, 0, 524299, 262144, 1, 589835, 262144, 3, 655371, 262145, 0, 720907, 131072, 0, 786443, 262145, 0, 851979, 262145, 0, 12, 262145, 0, 65548, 262145, 0, 131084, 131072, 0, 196620, 262145, 0, 262156, 262145, 0, 327692, 262145, 0, 393228, 131072, 0, 458764, 262145, 0, 589836, 262145, 0, 655372, 262145, 0, 720908, 131072, 0, 786444, 262145, 0, 851980, 262145, 0, 13, 262145, 0, 65549, 262145, 0, 131085, 131072, 0, 196621, 262145, 0, 262157, 262145, 0, 327693, 262145, 0, 393229, 65536, 0, 589837, 196608, 0, 655373, 196608, 0, 720909, 65536, 1, 786445, 262145, 0, 851981, 262145, 0, 14, 262145, 0, 65550, 262145, 0, 131086, 131072, 0, 196622, 262145, 0, 262158, 262145, 0, 327694, 262145, 0, 393230, 262145, 0, 458766, 262145, 0, 524302, 262145, 0, 589838, 262145, 0, 655374, 262145, 0, 720910, 262145, 0, 786446, 262145, 0, 851982, 262145, 0, 15, 262145, 0, 65551, 262145, 0, 131087, 65536, 0, 196623, 0, 1, 262159, 262145, 0, 327695, 262145, 0, 393231, 262145, 0, 458767, 262145, 0, 524303, 262145, 0, 589839, 262145, 0, 655375, 262145, 0, 720911, 262145, 0, 786447, 262145, 0, 851983, 262145, 0, 16, 262145, 0, 65552, 262145, 0, 131088, 262145, 0, 196624, 131072, 0, 262160, 262145, 0, 327696, 262145, 0, 393232, 262145, 0, 458768, 262145, 0, 524304, 262145, 0, 589840, 262145, 0, 655376, 262145, 0, 720912, 262145, 0, 786448, 262145, 0, 851984, 262145, 0, 17, 262145, 0, 65553, 262145, 0, 131089, 262145, 0, 196625, 65536, 0, 262161, 196608, 0, 327697, 196608, 0, 393233, 0, 1, 458769, 262145, 0, 524305, 262145, 0, 589841, 262145, 0, 655377, 262144, 0, 720913, 262144, 0, 786449, 262145, 0, 851985, 262145, 0, 18, 262145, 0, 65554, 262144, 0, 131090, 262145, 0, 196626, 262145, 0, 262162, 262145, 0, 327698, 262145, 0, 393234, 131072, 0, 458770, 262145, 0, 524306, 262145, 0, 589842, 262144, 0, 655378, 262144, 0, 720914, 262144, 0, 786450, 262145, 0, 851986, 262145, 0, 19, 262144, 0, 65555, 262144, 0, 131091, 262145, 0, 196627, 262145, 0, 262163, 262145, 0, 327699, 262145, 0, 393235, 131072, 0, 458771, 262145, 0, 524307, 262145, 0, 589843, 262144, 0, 655379, 262144, 0, 720915, 262145, 0, 786451, 262145, 0, 851987, 262145, 0, 20, 262144, 0, 65556, 262145, 0, 131092, 262145, 0, 196628, 0, 0, 262164, 196608, 0, 327700, 196608, 0, 393236, 65536, 1, 458772, 262145, 0, 524308, 262145, 0, 589844, 262144, 0, 655380, 262145, 0, 720916, 262145, 0, 786452, 262145, 0, 851988, 262145, 0, 21, 262145, 0, 65557, 262145, 0, 131093, 262145, 0, 196629, 131072, 0, 262165, 262145, 0, 327701, 262145, 0, 393237, 262145, 0, 458773, 262145, 0, 524309, 262145, 0, 589845, 262145, 0, 655381, 262145, 0, 720917, 262145, 0, 786453, 262145, 0, 851989, 262145, 0, 524300, 262145, 0, 458765, 196608, 0, 524301, 196608, 0, 917504, 262145, 0, 917505, 262145, 0, 917506, 262145, 0, 917507, 262145, 0, 917508, 262145, 0, 917509, 262145, 0, 917510, 262145, 0, 917511, 262145, 0, 917512, 262145, 0, 917513, 262145, 0, 917514, 262145, 0, 917515, 262145, 0, 917516, 262145, 0, 917517, 262145, 0, 917518, 262145, 0, 917519, 262145, 0, 917520, 262145, 0, 917521, 262145, 0, 917522, 262145, 0, 917523, 262145, 0, 917524, 262145, 0, 327685, 262145, 0, 327684, 262145, 0, 327683, 262145, 0, 196610, 131072, 3)
+script = ExtResource("4_eh5g8")
+
+[node name="Path2D" type="Path2D" parent="Mapa1/Mapa"]
+curve = SubResource("Curve2D_rp0jv")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa1/Mapa/Path2D"]
+position = Vector2(0, 103.333)
+rotation = -0.00322258
+
+[node name="Enemigos" parent="Mapa1/Mapa/Path2D/PathFollow2D" instance=ExtResource("12_tlant")]
+position = Vector2(-9.66877, 0.635849)
+scale = Vector2(0.38, 0.38)
+
+[node name="UI" type="CanvasLayer" parent="Mapa1/Mapa"]
+
+[node name="HUD" type="Control" parent="Mapa1/Mapa/UI"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -569.0
+offset_top = 58.0
+offset_right = -569.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="Mapa1/Mapa/UI/HUD"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 232.0
+offset_right = 1083.0
+offset_bottom = 326.0
+color = Color(0.440336, 0.440336, 0.440336, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="Mapa1/Mapa/UI/HUD"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 233.0
+offset_right = 1084.0
+offset_bottom = 326.0
+
+[node name="BoxContainer" type="BoxContainer" parent="Mapa1/Mapa/UI/HUD/PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Sig_Nivel" type="Button" parent="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer" groups=["Construir"]]
+layout_mode = 2
+text = "Siguiente Nivel"
+script = ExtResource("5_oai3j")
+
+[node name="Tomate" type="Button" parent="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer" groups=["Construir"]]
+layout_mode = 2
+text = "Tomate"
+
+[node name="Morron" type="Button" parent="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer" groups=["Construir"]]
+layout_mode = 2
+text = "Morron"
+
+[node name="Naranja" type="Button" parent="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer" groups=["Construir"]]
+layout_mode = 2
+text = "Naranja"
+
+[node name="Choclo" type="Button" parent="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer" groups=["Construir"]]
+self_modulate = Color(0.10748, 0.10748, 0.10748, 1)
+layout_mode = 2
+text = "Choclooooo"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mapa1/Mapa/UI/HUD"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa1/Mapa/UI"]
+position = Vector2(685, 721)
+scale = Vector2(0.365741, 0.398148)
+texture = ExtResource("7_hsqkx")
+
+[node name="Torres" type="Node2D" parent="."]
+script = ExtResource("5_cujmf")
+
+[node name="Choclo2" parent="Torres" instance=ExtResource("5_vvrek")]
+position = Vector2(167, 263)
+
+[node name="Choclo" parent="Torres" instance=ExtResource("5_vvrek")]
+position = Vector2(546, 257)
+
+[node name="Morron" parent="Torres" instance=ExtResource("7_4iucw")]
+visible = false
+position = Vector2(621, 180)
+
+[node name="Naranja" parent="Torres" instance=ExtResource("8_rhmxi")]
+visible = false
+position = Vector2(493, 485)
+
+[node name="Tomate" parent="Torres" instance=ExtResource("9_m0tpr")]
+visible = false
+position = Vector2(240, 476)
+
+[node name="coonstruct" type="Area2D" parent="Torres"]
+rotation = 0.785397
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torres/coonstruct"]
+visible = false
+position = Vector2(301.156, 46.8195)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_vj64n")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("12_l1jpe")
+
+[node name="Dinero" type="Label" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = 729.0
+offset_right = 206.0
+offset_bottom = 768.0
+text = "Dinero: "
+
+[node name="Nivel" type="Label" parent="CanvasLayer"]
+offset_left = -1.0
+offset_top = 695.0
+offset_right = 182.0
+offset_bottom = 747.0
+text = "Nivel:"
+
+[node name="GAMEOVER" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="GAMEOVER"]
+visible = false
+offset_left = 11.0
+offset_top = 4.0
+offset_right = 1054.0
+offset_bottom = 647.0
+tooltip_text = "GAME OVER"
+color = Color(0.659528, 0.000338744, 0.662943, 1)
+
+[node name="Area2D" type="Area2D" parent="." groups=["mapa"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(3, 293, 329, 293, 330, 525, 629, 531, 625, 336, 438, 330, 437, 103, 761, 100, 765, 141, 859, 148, 862, 285, 960, 288, 958, 150, 1063, 148, 1060, 185, 1005, 186, 1010, 337, 820, 329, 818, 191, 728, 189, 723, 138, 479, 142, 481, 289, 669, 294, 667, 574, 292, 571, 290, 335, -3, 331)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+script = ExtResource("16_71eba")
+
+[node name="Vida" type="Label" parent="CanvasLayer2"]
+offset_left = 754.0
+offset_top = 674.0
+offset_right = 959.0
+offset_bottom = 713.0
+text = "Vida: 200"
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1034, 166)
+shape = SubResource("RectangleShape2D_kwf23")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+position = Vector2(1025, 165)
+scale = Vector2(0.131071, 0.125942)
+texture = ExtResource("16_0b3ys")
+
+[connection signal="pressed" from="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer/Choclo" to="Mapa1" method="_on_choclo_pressed"]
+[connection signal="input_event" from="Torres/coonstruct" to="Torres" method="_on_coonstruct_input_event"]
+[connection signal="area_entered" from="Area2D2" to="Mapa1" method="_on_area_2d_2_area_entered"]
