@@ -9,7 +9,7 @@ var construccion = false
 func _ready():
 	connect("input_event", Callable(self, "_on_construc_input_event"))
 
-func _process(delta):
+func _process(_delta):
 	_alert()
 	if target_position and shoot:
 		$Verdura.look_at(target_position)
@@ -20,6 +20,7 @@ func _process(delta):
 		b.global_position = target_position
 		target_position = null
 		shoot = false  # Desactiva el disparo después de disparar
+		
 	if construccion == true :
 		self.global_position = get_global_mouse_position()
 		shoot = false
@@ -48,4 +49,15 @@ func _on_construc_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 			if event.is_released() and event.button_index == MOUSE_BUTTON_LEFT:
 				construccion = false
 				$".".modulate = Color("ffffff")
-			
+				pass
+
+#func _on_construct_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+			#if event is InputEventMouseButton:
+				#if event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+					#construccion = true
+					#print(1)
+				#$".".modulate = Color("7a7a7a")
+				#if event.is_released() and event.button_index == MOUSE_BUTTON_LEFT:
+					#construccion = false
+					#$".".modulate = Color("ffffff")
+					#pass # Replace with function body.

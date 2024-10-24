@@ -1,11 +1,5 @@
 extends Node2D
-var vida = 1000
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	_vida()
-	print(vida)
-
+var vida = 10
 
 func _on_enemigo_1_area_entered(area: Area2D) -> void:
 	if area.is_in_group("proyectil"):
