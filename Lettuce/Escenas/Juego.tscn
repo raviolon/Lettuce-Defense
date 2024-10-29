@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://4mu7b7cpdsyd"]
+[gd_scene load_steps=19 format=3 uid="uid://4mu7b7cpdsyd"]
 
 [ext_resource type="Texture2D" uid="uid://bost23h4ed4m8" path="res://Mapas/tilemapes.svg" id="1_cwkm4"]
 [ext_resource type="Script" path="res://Escenas/Mapa1.gd" id="1_xyh3x"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Escenas/Mapa.gd" id="4_eh5g8"]
 [ext_resource type="Script" path="res://Escenas/Torres.gd" id="5_cujmf"]
 [ext_resource type="Script" path="res://Scripts/sig_nivel.gd" id="5_oai3j"]
+[ext_resource type="Script" path="res://Scripts/salir_menu.gd" id="6_vu5c7"]
 [ext_resource type="Texture2D" uid="uid://blxps1u6qvq6n" path="res://Personaje/Game_Over/juego.png" id="7_0xho4"]
 [ext_resource type="Texture2D" uid="uid://5k50flxnqquw" path="res://Personaje/Tomate/tomate.svg" id="7_hsqkx"]
 [ext_resource type="PackedScene" uid="uid://cqqa234c1tocs" path="res://Personaje/Tomate/tomate.tscn" id="9_m0tpr"]
@@ -92,7 +93,7 @@ size_flags_vertical = 4
 [node name="ColorRect" type="ColorRect" parent="Mapa1/Mapa/UI/HUD"]
 layout_mode = 0
 offset_left = 57.0
-offset_top = 232.0
+offset_top = 229.0
 offset_right = 1083.0
 offset_bottom = 326.0
 color = Color(0.440336, 0.440336, 0.440336, 1)
@@ -100,9 +101,9 @@ color = Color(0.440336, 0.440336, 0.440336, 1)
 [node name="PanelContainer" type="PanelContainer" parent="Mapa1/Mapa/UI/HUD"]
 layout_mode = 0
 offset_left = 58.0
-offset_top = 233.0
+offset_top = 226.0
 offset_right = 1084.0
-offset_bottom = 326.0
+offset_bottom = 325.0
 
 [node name="BoxContainer" type="BoxContainer" parent="Mapa1/Mapa/UI/HUD/PanelContainer"]
 layout_mode = 2
@@ -131,6 +132,15 @@ layout_mode = 2
 text = "Choclooooo"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Mapa1/Mapa/UI/HUD"]
+
+[node name="Menu_salir" type="Button" parent="Mapa1/Mapa/UI/HUD" groups=["Construir"]]
+offset_left = 62.0
+offset_top = 226.0
+offset_right = 94.0
+offset_bottom = 257.0
+text = "X
+"
+script = ExtResource("6_vu5c7")
 
 [node name="Sprite2D" type="Sprite2D" parent="Mapa1/Mapa/UI"]
 position = Vector2(685, 721)
@@ -200,8 +210,8 @@ autostart = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(1009, 163)
-scale = Vector2(0.0925, 0.0946328)
+position = Vector2(1015.5, 167.563)
+scale = Vector2(0.0585714, 0.0774482)
 texture = ExtResource("10_585vg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -209,6 +219,7 @@ position = Vector2(1017, 167)
 shape = SubResource("RectangleShape2D_mkvfy")
 
 [connection signal="pressed" from="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer/Choclo" to="Mapa1" method="_on_choclo_pressed"]
+[connection signal="pressed" from="Mapa1/Mapa/UI/HUD/Menu_salir" to="Mapa1/Mapa/UI/HUD/Menu_salir" method="_on_pressed"]
 [connection signal="pressed" from="Mapa1/Mapa/GAMEOVER/ColorRect/Button" to="Mapa1" method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="Mapa1" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="Mapa1" method="_on_area_2d_area_entered"]
