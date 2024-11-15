@@ -23,13 +23,20 @@ func _unhandled_input(event):
 	
 func iniciar_construc_mode(torre_tipo):
 	pass
-
-func _on_choclo_pressed() -> void:
 	
-	var instance = choclo.instantiate()  # Cambiado a instantiate()
+func _on_choclo_pressed() -> void:
+	var instance = choclo.instantiate()
 	add_child(instance)
-	pass # Replace with function body.
-
+	
+	# Configura la posición inicial cerca del ratón
+	instance.global_position = get_global_mouse_position()
+	
+	# Activa el modo de construcción si está disponible
+	if instance.has_method("set_construccion"):
+		instance.set_construccion(true)
+	else:
+		print("Advertencia: El nodo no tiene el método 'set_construccion'")
+		
 func enemigo1():
 	var pos=$Mapa/Path2D
 	var enemigo1=Perro.instantiate()

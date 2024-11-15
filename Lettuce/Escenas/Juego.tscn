@@ -134,6 +134,7 @@ text = "Choclooooo"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Mapa1/Mapa/UI/HUD"]
 
 [node name="Menu_salir" type="Button" parent="Mapa1/Mapa/UI/HUD" groups=["Construir"]]
+layout_mode = 0
 offset_left = 62.0
 offset_top = 226.0
 offset_right = 94.0
