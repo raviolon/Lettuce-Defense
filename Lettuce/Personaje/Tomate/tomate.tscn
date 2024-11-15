@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqqa234c1tocs"]
 
-[ext_resource type="Script" path="res://Scripts/Torres/Choclo.gd" id="1_e4xhj"]
+[ext_resource type="Script" path="res://Scripts/Torres/Tomate.gd" id="1_e4xhj"]
 [ext_resource type="Texture2D" uid="uid://5k50flxnqquw" path="res://Personaje/Tomate/tomate.svg" id="2_tsjj7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ryw"]

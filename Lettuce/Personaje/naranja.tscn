@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cg8bgdictdb1g"]
+[gd_scene load_steps=5 format=3 uid="uid://dt5grbppoxtch"]
 
-[ext_resource type="Script" path="res://Scripts/Torres/Choclo.gd" id="1_1pmjm"]
+[ext_resource type="Script" path="res://Scripts/Torres/Tomate.gd" id="1_1pmjm"]
 [ext_resource type="Texture2D" uid="uid://cdlf83dyejab5" path="res://Personaje/Naranja/1918_1.naranja.jpg" id="2_tjy8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ryw"]

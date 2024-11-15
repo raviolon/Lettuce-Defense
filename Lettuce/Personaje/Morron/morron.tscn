@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://hij5ux6lf0kd"]
+[gd_scene load_steps=6 format=3 uid="uid://hij5ux6lf0kd"]
 
-[ext_resource type="Script" path="res://Scripts/Torres/Choclo.gd" id="1_m741v"]
+[ext_resource type="Script" path="res://Scripts/Torres/Morron.gd" id="1_hfhje"]
 [ext_resource type="Texture2D" uid="uid://bhfso6urft85k" path="res://Personaje/Morron/Morron rojo.jpg" id="2_sm1vd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ryw"]
@@ -9,9 +9,12 @@ size = Vector2(101, 88)
 [sub_resource type="CircleShape2D" id="CircleShape2D_4mqvj"]
 radius = 85.8662
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aa2k5"]
+size = Vector2(101.5, 120)
+
 [node name="Morron" type="CharacterBody2D" groups=["Torres"]]
 position = Vector2(538, 331)
-script = ExtResource("1_m741v")
+script = ExtResource("1_hfhje")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n0ryw")
@@ -32,5 +35,12 @@ shape = SubResource("CircleShape2D_4mqvj")
 wait_time = 0.039
 autostart = true
 
+[node name="construc" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="construc"]
+position = Vector2(0.25, 1)
+shape = SubResource("RectangleShape2D_aa2k5")
+
 [connection signal="area_entered" from="Rango" to="." method="_on_rango_area_entered"]
 [connection signal="timeout" from="Detencion" to="." method="_on_detencion_timeout"]
+[connection signal="input_event" from="construc" to="." method="_on_construc_input_event"]

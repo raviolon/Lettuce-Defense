@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bp3j2i2kku2hr"]
+[gd_scene load_steps=6 format=3 uid="uid://bp3j2i2kku2hr"]
 
-[ext_resource type="Script" path="res://Scripts/Torres/Choclo.gd" id="1_1pmjm"]
+[ext_resource type="Script" path="res://Scripts/Torres/Naranja.gd" id="1_5ie38"]
 [ext_resource type="Texture2D" uid="uid://cdlf83dyejab5" path="res://Personaje/Naranja/1918_1.naranja.jpg" id="2_tjy8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ryw"]
@@ -9,9 +9,12 @@ size = Vector2(101, 88)
 [sub_resource type="CircleShape2D" id="CircleShape2D_4mqvj"]
 radius = 85.8662
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yuvf"]
+size = Vector2(161.25, 150.75)
+
 [node name="Naranja" type="CharacterBody2D" groups=["Torres"]]
 position = Vector2(538, 331)
-script = ExtResource("1_1pmjm")
+script = ExtResource("1_5ie38")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n0ryw")
@@ -32,5 +35,12 @@ shape = SubResource("CircleShape2D_4mqvj")
 wait_time = 0.039
 autostart = true
 
+[node name="construc" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="construc"]
+position = Vector2(0.375, 0.625)
+shape = SubResource("RectangleShape2D_5yuvf")
+
 [connection signal="area_entered" from="Rango" to="." method="_on_rango_area_entered"]
 [connection signal="timeout" from="Detencion" to="." method="_on_detencion_timeout"]
+[connection signal="input_event" from="construc" to="." method="_on_construc_input_event"]

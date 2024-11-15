@@ -114,9 +114,10 @@ layout_mode = 2
 text = "Siguiente Nivel"
 script = ExtResource("5_oai3j")
 
-[node name="Tomate" type="Button" parent="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer" groups=["Construir"]]
+[node name="Choclo" type="Button" parent="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer" groups=["Construir"]]
 layout_mode = 2
-text = "Tomate"
+text = "Choclo
+"
 
 [node name="Morron" type="Button" parent="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer" groups=["Construir"]]
 layout_mode = 2
@@ -126,7 +127,7 @@ text = "Morron"
 layout_mode = 2
 text = "Naranja"
 
-[node name="Choclo" type="Button" parent="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer" groups=["Construir"]]
+[node name="Tomate" type="Button" parent="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer" groups=["Construir"]]
 self_modulate = Color(0.10748, 0.10748, 0.10748, 1)
 layout_mode = 2
 text = "Choclooooo"
@@ -220,6 +221,9 @@ position = Vector2(1017, 167)
 shape = SubResource("RectangleShape2D_mkvfy")
 
 [connection signal="pressed" from="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer/Choclo" to="Mapa1" method="_on_choclo_pressed"]
+[connection signal="pressed" from="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer/Morron" to="Mapa1" method="_on_morron_pressed"]
+[connection signal="pressed" from="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer/Naranja" to="Mapa1" method="_on_naranja_pressed"]
+[connection signal="pressed" from="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer/Tomate" to="Mapa1" method="_on_tomate_pressed"]
 [connection signal="pressed" from="Mapa1/Mapa/UI/HUD/Menu_salir" to="Mapa1/Mapa/UI/HUD/Menu_salir" method="_on_pressed"]
 [connection signal="pressed" from="Mapa1/Mapa/GAMEOVER/ColorRect/Button" to="Mapa1" method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="Mapa1" method="_on_timer_timeout"]
