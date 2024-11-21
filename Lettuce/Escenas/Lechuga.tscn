@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3mo17c02s3l0"]
+
+[ext_resource type="Texture2D" uid="uid://d0b1clvkucfyu" path="res://Personaje/Lechuga/lechuga.jpg" id="1_qfjmb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkvfy"]
+size = Vector2(38, 39.6875)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0585714, 0.0774482)
+texture = ExtResource("1_qfjmb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mkvfy")

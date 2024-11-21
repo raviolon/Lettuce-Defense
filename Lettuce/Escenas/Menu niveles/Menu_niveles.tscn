@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://d14a7deq43ii1"]
+
+[ext_resource type="Script" path="res://scripts/menu_niveles.gd" id="1_vyjaq"]
+[ext_resource type="Texture2D" uid="uid://cr6t4roay0x2m" path="res://Mapas/Pixel Art Wallpaper - Wallpaperforu.jpg" id="2_cjgp8"]
+[ext_resource type="FontFile" uid="uid://kb0ocjh04hh1" path="res://Fuente/minecraft_font.ttf" id="3_d48el"]
+[ext_resource type="Texture2D" uid="uid://b3hda3mdnsq2m" path="res://Mapas/Mapa 1.png" id="4_jxm1k"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vyjaq")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(834.749, 386.25)
+scale = Vector2(1.38875, 1.13704)
+texture = ExtResource("2_cjgp8")
+region_enabled = true
+region_rect = Rect2(0, 0, 1200, 675)
+
+[node name="Nivel 1" type="Button" parent="."]
+layout_mode = 2
+offset_left = 100.0
+offset_top = 131.0
+offset_right = 321.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("3_d48el")
+theme_override_font_sizes/font_size = 40
+text = "Nivel 1
+"
+icon = ExtResource("4_jxm1k")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Nivel 2" type="Button" parent="."]
+offset_left = 400.0
+offset_top = 131.0
+offset_right = 621.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("3_d48el")
+theme_override_font_sizes/font_size = 40
+text = "Nivel 1
+"
+icon = ExtResource("4_jxm1k")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Nivel 3" type="Button" parent="."]
+offset_left = 700.0
+offset_top = 131.0
+offset_right = 921.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("3_d48el")
+theme_override_font_sizes/font_size = 40
+text = "Nivel 1
+"
+icon = ExtResource("4_jxm1k")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Menu" type="Button" parent="."]
+offset_left = 327.0
+offset_top = 549.0
+offset_right = 685.0
+offset_bottom = 607.0
+theme_override_fonts/font = ExtResource("3_d48el")
+theme_override_font_sizes/font_size = 40
+text = "Volver al menu"
+flat = true
+
+[connection signal="pressed" from="Nivel 1" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Nivel 2" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Nivel 3" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_salir_pressed"]
