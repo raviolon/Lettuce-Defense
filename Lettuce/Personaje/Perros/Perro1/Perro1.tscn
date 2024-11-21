@@ -15,14 +15,14 @@ position = Vector2(-2.333, 1.662)
 scale = Vector2(0.25, 0.25)
 script = ExtResource("2_fskgi")
 
-[node name="Enemigo" type="Sprite2D" parent="Enemigo1"]
+[node name="Enemigo" type="Sprite2D" parent="Enemigo1" groups=["Enemigos"]]
 scale = Vector2(0.351928, 0.325827)
 texture = ExtResource("2_jicd0")
 hframes = 2
 vframes = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemigo1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemigo1" groups=["Enemigos"]]
 position = Vector2(-2.668, 1.352)
 shape = SubResource("RectangleShape2D_kt668")
 
-[connection signal="area_entered" from="Enemigo1" to="." method="_on_enemigo_1_area_entered"]
+[connection signal="area_entered" from="Enemigo1" to="Enemigo1" method="_on_area_entered"]
