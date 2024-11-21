@@ -31,23 +31,15 @@ func iniciar_construc_mode(torre_tipo):
 func enemigo1():
 	var pos=$Mapa/Path2D
 	var enemigo1=Perro.instantiate()
+	print(enemigo1.get_node("Enemigo1").vida)
 	enemigo1.global_position=Vector2(pos.global_position.x, pos.global_position.y)
-	get_node("Mapa/Path2D").add_child(enemigo1)
+	get_node("Mapa/Path2D").add_child(enemigo1)	
 
 func _on_timer_timeout() -> void:	
 	enemigo1()
 	enemigos-=1
 	if enemigos<=0:
 		$"../Timer".stop()
-
-func _game_over():
-	if Global.vida <= 0:
-		$Mapa/GAMEOVER/ColorRect.visible = true
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if  area.is_in_group("Enemigos"):
-		Global.vida -= 1
-		_game_over()
 
 
 func _on_button_pressed() -> void:

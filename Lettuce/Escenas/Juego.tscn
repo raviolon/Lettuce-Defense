@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cqqa234c1tocs" path="res://Personaje/Tomate/tomate.tscn" id="9_m0tpr"]
 [ext_resource type="Script" path="res://Scripts/canvas_layer_2.gd" id="10_hl4pk"]
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="12_l1jpe"]
-[ext_resource type="PackedScene" path="res://Escenas/Lechuga.tscn" id="13_lg3gn"]
+[ext_resource type="PackedScene" uid="uid://d3mo17c02s3l0" path="res://Escenas/Lechuga.tscn" id="13_lg3gn"]
 [ext_resource type="PackedScene" uid="uid://d2caarta7r8bk" path="res://Escenas/pausa.tscn" id="14_fobvf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5rcg"]
@@ -49,7 +49,7 @@ sources/1 = SubResource("TileSetAtlasSource_uaayk")
 
 [sub_resource type="Curve2D" id="Curve2D_rp0jv"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 103.333, 0, 0, 0, 0, 10.6667, 103.333, 0, 0, 0, 0, 103.333, 103, 0, 0, 0, 0, 105.333, 181.333, 0, 0, 0, 0, 216.333, 183.667, 0, 0, 0, 0, 216.333, 104, 0, 0, 0, 0, 152.667, 103.333, 0, 0, 0, 0, 151.667, 40.3333, 0, 0, 0, 0, 248.667, 41, 0, 0, 0, 0, 248.667, 57.3333, 0, 0, 0, 0, 278.333, 57.3333, 0, 0, 0, 0, 278.667, 102, 0, 0, 0, 0, 326, 101.667, 0, 0, 0, 0, 327, 57.3333, 0, 0, 0, 0, 348, 57.3333)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 103.333, 0, 0, 0, 0, 10.6667, 103.333, 0, 0, 0, 0, 103.333, 103, 0, 0, 0, 0, 105.333, 181.333, 0, 0, 0, 0, 216.333, 183.667, 0, 0, 0, 0, 216.333, 104, 0, 0, 0, 0, 152.667, 103.333, 0, 0, 0, 0, 151.667, 40.3333, 0, 0, 0, 0, 248.667, 41, 0, 0, 0, 0, 262.667, 41, 0, 0, 0, 0, 263, 72.6667, 0, 0, 0, 0, 264.333, 89, 0, 0, 0, 0, 296, 89.3333, 0, 0, 0, 0, 317, 89, 0, 0, 0, 0, 336, 88.6667)
 }
 point_count = 15
 

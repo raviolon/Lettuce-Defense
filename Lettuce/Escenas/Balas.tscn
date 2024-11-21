@@ -6,21 +6,21 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eugy3"]
 size = Vector2(34, 21)
 
-[node name="Balas" type="Node2D"]
+[node name="Balas" type="Node2D" groups=["proyectil"]]
 
 [node name="Area2D" type="Area2D" parent="." groups=["proyectil"]]
 script = ExtResource("1_vuls4")
 
-[node name="Bala" type="Sprite2D" parent="Area2D"]
+[node name="Bala" type="Sprite2D" parent="Area2D" groups=["proyectil"]]
 position = Vector2(-5, -4.5)
 scale = Vector2(0.0944444, 0.0875)
 texture = ExtResource("1_m3ots")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["proyectil"]]
 position = Vector2(-5, -4.5)
 shape = SubResource("RectangleShape2D_eugy3")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." groups=["proyectil"]]
 position = Vector2(-5, -4.5)
 scale = Vector2(1.7, 1.05)
 
