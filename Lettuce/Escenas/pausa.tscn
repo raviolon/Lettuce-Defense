@@ -21,6 +21,7 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0.32549)
 
 [node name="TextEdit" type="TextEdit" parent="ColorRect"]
+layout_mode = 0
 offset_left = 384.0
 offset_top = 263.0
 offset_right = 724.0
