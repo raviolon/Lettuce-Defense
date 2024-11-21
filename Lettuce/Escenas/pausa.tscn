@@ -26,3 +26,14 @@ offset_top = 263.0
 offset_right = 724.0
 offset_bottom = 406.0
 text = "PAUSA"
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 466.0
+offset_right = 591.0
+offset_bottom = 513.0
+text = "Volver al menu
+"
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
