@@ -54,9 +54,11 @@ func _on_detencion_timeout():
 	target_position = null
 
 func set_construccion(state: bool) -> void:
-	construccion = state
-	if construccion:
-		offset = get_global_mouse_position() - global_position
+	if(Global.cash >= 50):
+		Global.cash -= 50
+		construccion = state
+		if construccion:
+			offset = get_global_mouse_position() - global_position
 
 #func _on_construc_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 #		if event is InputEventMouseButton:
