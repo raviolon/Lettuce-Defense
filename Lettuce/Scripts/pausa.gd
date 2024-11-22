@@ -22,9 +22,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	# Detener procesos específicos de la escena actual si es necesario
-	# Por ejemplo, si tienes un temporizador, lo puedes detener aquí:
-	# $Timer.stop()
-
+	# Asegúrate de despausar el juego antes de cambiar de escena
+	get_tree().paused = false
 	# Cambiar a la nueva escena (por ejemplo, al menú principal)
 	get_tree().change_scene_to_file("res://Escenas/Menu.tscn")
