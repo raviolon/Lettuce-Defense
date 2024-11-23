@@ -52,58 +52,68 @@ func _on_button_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_naranja_pressed():
-	var instance = naranja.instantiate()
-	add_child(instance)
-	
-	# Configura la posición inicial cerca del ratón
-	instance.global_position = get_global_mouse_position()
-	
+	if(Global.cash >= 150):
+		Global.cash -= 150
+		var instance = naranja.instantiate()
+		add_child(instance)
+	# Configura la posición inicial 
+		instance.global_position = get_global_mouse_position()
 	# Activa el modo de construcción si está disponible
-	if instance.has_method("set_construccion"):
-		instance.set_construccion(true)
+		if instance.has_method("set_construccion"):
+				instance.set_construccion(true)
+		else:
+			print("Advertencia: El nodo no tiene el método 'set_construccion'")
 	else:
-		print("Advertencia: El nodo no tiene el método 'set_construccion'")
-		
+		print("dinero insuficiente");
 	pass # Replace with function body.
 
 
 func _on_tomate_pressed() -> void:
-	var instance = tomate.instantiate()
-	add_child(instance)
-	# Configura la posición inicial cerca del ratón
-	instance.global_position = get_global_mouse_position()
+	if(Global.cash >= 50):
+		Global.cash -= 50
+		var instance = tomate.instantiate()
+		add_child(instance)
+	# Configura la posición inicial 
+		instance.global_position = get_global_mouse_position()
 	# Activa el modo de construcción si está disponible
-	if instance.has_method("set_construccion"):
-		instance.set_construccion(true)
+		if instance.has_method("set_construccion"):
+			instance.set_construccion(true)
+		else:
+			print("Advertencia: El nodo no tiene el método 'set_construccion'")
 	else:
-		print("Advertencia: El nodo no tiene el método 'set_construccion'")
-		
-	pass # Replace with function body.
+		print("dinero insuficiente");
+		pass # Replace with function body.
 
 
 func _on_morron_pressed():
-	var instance = morron.instantiate()
-	add_child(instance)
-	# Configura la posición inicial cerca del ratón
-	instance.global_position = get_global_mouse_position()
+	if(Global.cash >= 150):
+		Global.cash -= 150
+		var instance = morron.instantiate()
+		add_child(instance)
+	# Configura la posición inicial 
+		instance.global_position = get_global_mouse_position()
 	# Activa el modo de construcción si está disponible
-	if instance.has_method("set_construccion"):
-		instance.set_construccion(true)
+		if instance.has_method("set_construccion"):
+			instance.set_construccion(true)
+		else:
+			print("Advertencia: El nodo no tiene el método 'set_construccion'")
 	else:
-		print("Advertencia: El nodo no tiene el método 'set_construccion'")
-		
-	pass # Replace with function body.
+		print("dinero insuficiente");
+		pass # Replace with function body.
 
 
 func _on_choclo_pressed():
-	var instance = choclo.instantiate()
-	add_child(instance)
+	if(Global.cash >= 100):
+		Global.cash -= 100
+		var instance = choclo.instantiate()
+		add_child(instance)
 	# Configura la posición inicial cerca del ratón
-	instance.global_position = get_global_mouse_position()
+		instance.global_position = get_global_mouse_position()
 	# Activa el modo de construcción si está disponible
-	if instance.has_method("set_construccion"):
-		instance.set_construccion(true)
+		if instance.has_method("set_construccion"):
+			instance.set_construccion(true)
+		else:
+			print("Advertencia: El nodo no tiene el método 'set_construccion'")
 	else:
-		print("Advertencia: El nodo no tiene el método 'set_construccion'")
-		
-	pass # Replace with function body.
+		print("dinero insuficiente");
+		pass # Replace with function body.

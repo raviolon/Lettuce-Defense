@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt5grbppoxtch"]
+[gd_scene load_steps=5 format=3 uid="uid://cmbp0kclbx7d3"]
 
 [ext_resource type="Script" path="res://Scripts/Torres/Tomate.gd" id="1_1pmjm"]
-[ext_resource type="Texture2D" uid="uid://cdlf83dyejab5" path="res://Personaje/Naranja/1918_1.naranja.jpg" id="2_tjy8k"]
+[ext_resource type="Texture2D" uid="uid://4gnguosk41n4" path="res://Personaje/Choclo/choclo.svg" id="2_1ohn5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ryw"]
 size = Vector2(101, 88)
@@ -17,8 +17,8 @@ script = ExtResource("1_1pmjm")
 shape = SubResource("RectangleShape2D_n0ryw")
 
 [node name="Verdura" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.240331)
-texture = ExtResource("2_tjy8k")
+scale = Vector2(0.455574, 0.412308)
+texture = ExtResource("2_1ohn5")
 
 [node name="Mira" type="Marker2D" parent="Verdura"]
 position = Vector2(430, 0)

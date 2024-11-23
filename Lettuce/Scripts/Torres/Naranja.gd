@@ -54,8 +54,6 @@ func _on_detencion_timeout():
 	target_position = null
 
 func set_construccion(state: bool) -> void:
-	if(Global.cash >= 150):
-		Global.cash -= 150
 		construccion = state
 		if construccion:
 			offset = get_global_mouse_position() - global_position

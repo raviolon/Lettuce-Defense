@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://x11kif2a0s4j"]
+[gd_scene load_steps=5 format=3 uid="uid://clit2b65e0eo7"]
 
 [ext_resource type="Script" path="res://Scripts/Torres/Tomate.gd" id="1_m741v"]
 [ext_resource type="Texture2D" uid="uid://bhfso6urft85k" path="res://Personaje/Morron/Morron rojo.jpg" id="2_sm1vd"]
