@@ -468,6 +468,7 @@ margin:3%;
 
 .item {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 50px; 
     padding: 35px;
@@ -570,9 +571,8 @@ body {
 }
 
 .itemp img {
-    width: 100px;
+    width: 190px;
     height: auto;
-    margin-bottom: 15px;
 }
 
 
