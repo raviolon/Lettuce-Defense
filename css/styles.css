@@ -1,6 +1,7 @@
 * {
     margin: 0;
-    padding: 0%;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .navbar {
@@ -14,18 +15,18 @@
 }
 .santiaguin {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-left: 0;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    margin-left: 0; 
+    margin-right: auto; 
+    margin-left: auto; 
+    padding: 20px; 
+    font-family: 'Arial', sans-serif; 
     font-size: 20px;
-    color: #333;
+    color: #333; 
     border-radius: 10px
-}
+} 
 
 .matematica {
     margin-top: 2.5%
@@ -35,10 +36,10 @@
     margin-top: 1%
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&#39;);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; 
 }
 
 .romerin {
@@ -165,6 +166,7 @@
     white-space: nowrap;
     position: relative;
     height: auto;
+    margin-bottom: 0;
 }
 
 .logos:before,
@@ -197,11 +199,11 @@
 
 .logos-slide {
     display: inline-block;
-    animation: 35s slide infinite linear;
+    animation: 100s slide infinite linear;
 }
 
 .logos-slide img {
-    height: 175px;
+    height: 130px;
     margin: 0 40px;
 }
 
@@ -239,8 +241,8 @@ a:hover {
 
 .content {
     background-color: black;
-    color: white;
-   
+    color: white; 
+    
 }
 .hero {
     display: flex;
@@ -262,7 +264,7 @@ a:hover {
    
     text-decoration: none;
     border-radius: 5px;
-   
+    
     display: inline-block;
 }
 
@@ -279,6 +281,7 @@ a:hover {
 }
 
 .feature-item img {
+    margin-bottom: 5%;
     width: 600px;
     height: 450px;
 }
@@ -297,17 +300,17 @@ a:hover {
     background-color: #4CAF50;
     color: white;
     width: 150px;  
-    height: 150px;
+    height: 150px; 
     text-align: center;  
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.2em; 
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-   
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    
 }
 
 .download-btn:hover {
-    background-color: #45a049;
+    background-color: #45a049; 
 }
 .imagen-feature {
 width: 600px;
@@ -329,6 +332,8 @@ margin:3%;
     align-items: center; /* Alinea verticalmente las imágenes */
     width: 80%; /* Ajusta el ancho del contenedor según tus necesidades */
     max-width: 1200px; /* Ancho máximo para no hacer el contenedor demasiado ancho */
+    margin-top:10%;
+    margin: 30px auto;
 }
 
 /* Estilo para los elementos de la imagen */
@@ -444,4 +449,45 @@ margin:3%;
     font-size: 18px;
     margin-left: 5px;
     font-weight: bold;
+}
+.footer {
+
+    margin-top: 100px;
+    padding:0;
+}
+
+
+
+
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 50px; 
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+}
+
+
+
+.text h2 {
+    color: #4CAF50;
+}
+
+.text h3 {
+    color: white;
 }
