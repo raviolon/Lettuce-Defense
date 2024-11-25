@@ -58,15 +58,21 @@
 
 
 .uno {
-    color: rgb(255, 255, 255)
+    color: rgb(255, 255, 255);
+    font-family: Tiny5;
 }
 
 .dos {
     color: rgb(112, 191, 110);
     display: flex;
     justify-content: center;
+    font-family: Tiny5;
 }
-
+.dos2 {
+    color: rgb(112, 191, 110);
+    display: flex;
+    justify-content: center;
+}
 .btn {
     background-color: rgb(112, 191, 110);
     color: white;
@@ -91,7 +97,7 @@
 
 .nav_uno {
 
-    margin-right: 30%;
+    margin-right: auto;
     margin-left: 10px;
 }
 
@@ -452,7 +458,6 @@ margin:3%;
 }
 .footer {
 
-    margin-top: 100px;
     padding:0;
 }
 
@@ -486,8 +491,36 @@ margin:3%;
 
 .text h2 {
     color: #4CAF50;
+    font-family: Tiny5;
 }
 
 .text h3 {
     color: white;
 }
+
+.corazones, .velocidad {
+    max-width: 25px;
+    max-height: 25px;
+    vertical-align: middle; /* Alinea las imágenes verticalmente con el texto */
+    margin-right: 5px; /* Opcional: Da algo de espacio entre las imágenes */
+}
+
+h3 {
+    display: inline-flex; /* Asegura que los elementos dentro del h3 estén alineados horizontalmente */
+    align-items: center;  /* Centra las imágenes verticalmente con el texto */
+}
+.titperro {
+    font-size: 100px;
+    display: flex;              /* Utiliza flexbox para alinear */
+    justify-content: center;         /* Utiliza toda la altura de la ventana del navegador */
+    margin: 0;                  /* Elimina cualquier margen por defecto */
+    text-align: center;  
+    font-family: Tiny5;       /* Alinea el texto al centro */
+}
+.tiny5-regular {
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
