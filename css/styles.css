@@ -49,6 +49,7 @@
 
 .romerines {
     font-size: 25px;
+    font-family: monospace;
 }
 
 .dos_ymedio {
@@ -283,7 +284,7 @@ a:hover {
 }
 
 .feature-item {
-    margin: 20px 0;
+    margin: 0px;
 }
 
 .feature-item img {
@@ -522,5 +523,56 @@ h3 {
     font-weight: 400;
     font-style: normal;
   }
-  
-  
+  /* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para el body */
+body {
+    font-family: 'Tiny5', sans-serif;  /* Establece la fuente personalizada */
+    display: flex;
+    flex-direction: column;  /* Distribuye los elementos de arriba hacia abajo */
+    min-height: 100vh;  /* Asegura que la página ocupe al menos el 100% de la altura */
+    background-color: #f1f1f1;  /* Color de fondo suave */
+}
+
+/* Asegura que el contenedor principal ocupe todo el espacio disponible */
+.content {
+    flex: 1;  /* Hace que el contenido ocupe todo el espacio restante */
+    padding: 20px;
+}
+
+
+
+
+/* Sección de los perros */
+.romero1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+.itemp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 20%;
+    max-width: 250px;
+    min-width: 150px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.itemp img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+
