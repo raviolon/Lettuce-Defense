@@ -6,7 +6,7 @@ var target_position = null
 var velocidad = 10
 var construccion = false
 var offset = Vector2.ZERO  # Para manejar el arrastre correctamente
-
+var area_valida = true
 func _ready():
 	connect("input_event", Callable(self, "_on_construc_input_event"))
 
@@ -15,9 +15,7 @@ func _process(_delta):
 	
 	# Si está en modo construcción, sigue el ratón
 	if construccion:
-		self.global_position = get_global_mouse_position() - offset
 		shoot = false
-	
 	# Manejo del disparo
 	elif target_position and shoot:
 		$Verdura.look_at(target_position)
@@ -28,16 +26,6 @@ func _process(_delta):
 		b.global_position = target_position
 		target_position = null
 		shoot = false
-
-func _on_construc_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
-			construccion = true
-			offset = get_global_mouse_position() - global_position  # Calcula el desplazamiento inicial
-			$".".modulate = Color("7a7a7a")
-		elif event.is_released() and event.button_index == MOUSE_BUTTON_LEFT:
-			construccion = false
-			$".".modulate = Color("ffffff")
 
 func _on_rango_area_entered(area):
 	if shoot and area.is_in_group("Enemigos"):
@@ -54,28 +42,17 @@ func _on_detencion_timeout():
 	target_position = null
 
 func set_construccion(state: bool) -> void:
-		construccion = state
-		if construccion:
-			offset = get_global_mouse_position() - global_position
+	construccion = state
 
-#func _on_construc_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-#		if event is InputEventMouseButton:
-#			if event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
-#				construccion = true
-#				print(1)
-#				$".".modulate = Color("7a7a7a")
-#			if event.is_released() and event.button_index == MOUSE_BUTTON_LEFT:
-#				construccion = false
-#				$".".modulate = Color("ffffff")
-#				pass
 
-#func _on_construct_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-			#if event is InputEventMouseButton:
-				#if event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
-					#construccion = true
-					#print(1)
-				#$".".modulate = Color("7a7a7a")
-				#if event.is_released() and event.button_index == MOUSE_BUTTON_LEFT:
-					#construccion = false
-					#$".".modulate = Color("ffffff")
-					#pass # Replace with function body.
+func _on_construccionhitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Torres"):  # Si detecta otra torre
+		print("No se permite posicionar aquí.")
+		area_valida = false
+	pass # Replace with function body.
+
+
+func _on_construccionhitbox_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Torres"):
+		area_valida = true
+	pass # Replace with function body.
