@@ -7,13 +7,13 @@
 radius = 85.8662
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sx1eo"]
-size = Vector2(69.75, 61.5)
+size = Vector2(56, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6u6h"]
-size = Vector2(69, 64.5)
+size = Vector2(56, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ryw"]
-size = Vector2(101, 88)
+size = Vector2(56, 50)
 
 [node name="Tomate" type="CharacterBody2D" groups=["Torres"]]
 position = Vector2(538, 331)
@@ -41,15 +41,17 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="construc"]
-position = Vector2(0, 1)
+position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_sx1eo")
 
 [node name="construccionhitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="construccionhitbox"]
+position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_r6u6h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Torres"]]
+position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_n0ryw")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

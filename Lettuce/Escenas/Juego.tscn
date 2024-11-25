@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://4mu7b7cpdsyd"]
+[gd_scene load_steps=18 format=3 uid="uid://4mu7b7cpdsyd"]
 
 [ext_resource type="Texture2D" uid="uid://bost23h4ed4m8" path="res://Mapas/tilemapes.svg" id="1_cwkm4"]
 [ext_resource type="Script" path="res://Escenas/Mapa1.gd" id="1_xyh3x"]
@@ -51,6 +51,8 @@ _data = {
 }
 point_count = 15
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d43yi"]
+
 [sub_resource type="TileSet" id="TileSet_crofl"]
 
 [node name="Juego" type="Node2D"]
@@ -69,6 +71,9 @@ script = ExtResource("4_eh5g8")
 
 [node name="Path2D" type="Path2D" parent="Mapa1/Mapa"]
 curve = SubResource("Curve2D_rp0jv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa1/Mapa/Path2D"]
+shape = SubResource("RectangleShape2D_d43yi")
 
 [node name="UI" type="CanvasLayer" parent="Mapa1/Mapa"]
 
