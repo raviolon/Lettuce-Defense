@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqqa234c1tocs"]
+
+[ext_resource type="Script" path="res://Scripts/Torres/Tomate.gd" id="1_e4xhj"]
+[ext_resource type="Texture2D" uid="uid://5k50flxnqquw" path="res://Personaje/Tomate/tomate.svg" id="2_tsjj7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ryw"]
+size = Vector2(101, 88)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4mqvj"]
+radius = 85.8662
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sx1eo"]
+size = Vector2(69.75, 61.5)
+
+[node name="Tomate" type="CharacterBody2D" groups=["Torres"]]
+position = Vector2(538, 331)
+script = ExtResource("1_e4xhj")
+
+[node name="construccionhitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n0ryw")
+
+[node name="Verdura" type="Sprite2D" parent="."]
+position = Vector2(-3.05, 0)
+scale = Vector2(0.232275, 0.240331)
+texture = ExtResource("2_tsjj7")
+
+[node name="Mira" type="Marker2D" parent="Verdura"]
+position = Vector2(430, 0)
+
+[node name="Rango" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rango"]
+shape = SubResource("CircleShape2D_4mqvj")
+
+[node name="Detencion" type="Timer" parent="."]
+wait_time = 0.039
+autostart = true
+
+[node name="construc" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="construc"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_sx1eo")
+
+[connection signal="area_entered" from="Rango" to="." method="_on_rango_area_entered"]
+[connection signal="timeout" from="Detencion" to="." method="_on_detencion_timeout"]
+[connection signal="area_entered" from="construc" to="." method="_on_construc_area_entered"]
+[connection signal="input_event" from="construc" to="." method="_on_construc_input_event"]

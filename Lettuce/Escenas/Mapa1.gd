@@ -11,10 +11,18 @@ var morron = preload("res://Personaje/Morron/morron.tscn")
 var naranja = preload("res://Personaje/Naranja/naranja.tscn")
 var Perro = preload("res://Personaje/Perros/Perro1/Perro1.tscn")
 var enemigos = 3
+var enemigos_total = enemigos
 
 func _ready():
+	Global.enemigos_muertos = 0
 	Global.cash = 200
 	map_nodo = $Mapa
+
+func game_win():
+	# Verifica si todos los enemigos han muerto y si el juego no ha sido ganado aún
+	if enemigos_total == Global.enemigos_muertos :
+		var color_rect_sprite = get_tree().root.get_node("Juego/Mapa1/Mapa/GAMEWIN")
+		color_rect_sprite.visible = true
 
 func enemigo1():
 	var pos = $Mapa/Path2D
@@ -29,7 +37,7 @@ func _on_timer_timeout() -> void:
 	if enemigos <= 0:
 		$"../Timer".stop()
 
-func _on_button_pressed() -> void:
+func _on_button_lose_pressed() -> void:
 	get_tree().reload_current_scene()
 	$Mapa/GAMEOVER/ColorRect.visible = false
 	Global.vida = 10
@@ -46,6 +54,9 @@ func _process(delta):
 			torre_instancia_temp.modulate = Color(1, 0, 0, 0.5)  # Rojo si hay colisión
 		else:
 			torre_instancia_temp.modulate = Color(1, 1, 1, 0.5)  # Blanco si está libre
+
+	# Llama a game_win() para verificar si el juego ha sido ganado
+	game_win()
 
 func _input(event):
 	if construir_modo and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -100,3 +111,6 @@ func crear_torre_temporal(preload_scene: PackedScene, costo: int):
 		print("Vista previa activada para:", preload_scene)
 	else:
 		print("Dinero insuficiente")
+
+func _on_button_win_pressed():
+	get_tree().change_scene_to_file("res://Escenas/Menu.tscn")

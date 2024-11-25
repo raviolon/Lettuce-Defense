@@ -140,6 +140,7 @@ scale = Vector2(0.365741, 0.398148)
 texture = ExtResource("7_hsqkx")
 
 [node name="GAMEOVER" type="CanvasLayer" parent="Mapa1/Mapa"]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Mapa1/Mapa/GAMEOVER"]
 offset_right = 1065.0
@@ -153,19 +154,11 @@ texture = ExtResource("7_0xho4")
 
 [node name="Button_Lose" type="Button" parent="Mapa1/Mapa/GAMEOVER/ColorRect"]
 layout_mode = 0
-offset_left = 334.0
-offset_top = 495.0
-offset_right = 492.0
-offset_bottom = 589.0
+offset_left = 454.0
+offset_top = 499.0
+offset_right = 612.0
+offset_bottom = 593.0
 text = "NUEVO JUEGO
-"
-
-[node name="Button_Win" type="Button" parent="Mapa1/Mapa/GAMEOVER/ColorRect"]
-offset_left = 577.0
-offset_top = 501.0
-offset_right = 735.0
-offset_bottom = 595.0
-text = "VOLVER AL MENU
 "
 
 [node name="torres" type="Node2D" parent="Mapa1/Mapa" groups=["Torres"]]
@@ -236,10 +229,7 @@ position = Vector2(1008, 264)
 [connection signal="pressed" from="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer/Morron" to="Mapa1" method="_on_morron_pressed"]
 [connection signal="pressed" from="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer/Naranja" to="Mapa1" method="_on_naranja_pressed"]
 [connection signal="pressed" from="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer/Tomate" to="Mapa1" method="_on_tomate_pressed"]
-[connection signal="pressed" from="Mapa1/Mapa/GAMEOVER/ColorRect/Button_Lose" to="Mapa1" method="_on_button_lose_pressed"]
 [connection signal="pressed" from="Mapa1/Mapa/GAMEOVER/ColorRect/Button_Lose" to="Mapa1" method="_on_button_pressed"]
-[connection signal="pressed" from="Mapa1/Mapa/GAMEOVER/ColorRect/Button_Win" to="Mapa1" method="_on_button_win_pressed"]
-[connection signal="pressed" from="Mapa1/Mapa/GAMEOVER/ColorRect/Button_Win" to="Mapa1" method="_on_button_pressed"]
 [connection signal="child_entered_tree" from="Mapa1/Mapa/torres" to="Mapa1" method="_on_torres_child_entered_tree"]
 [connection signal="pressed" from="Mapa1/Mapa/GAMEWIN/ColorRect/Button_Win" to="Mapa1" method="_on_button_win_pressed"]
 [connection signal="pressed" from="Mapa1/Mapa/GAMEWIN/ColorRect/Button_Win" to="Mapa1" method="_on_button_pressed"]
