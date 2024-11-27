@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da8rqadjbdk0d"
-path="res://.godot/imported/beagle.svg-7a97d41d5a1bcf19c658dc14d9a072e7.ctex"
+uid="uid://byqcw5iw4y72l"
+path="res://.godot/imported/Dog3 (1).svg-b571468681fa8c675e2944940b108b95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Personaje/Perros/Perro2/beagle.svg"
-dest_files=["res://.godot/imported/beagle.svg-7a97d41d5a1bcf19c658dc14d9a072e7.ctex"]
+source_file="res://Personaje/Perros/Perro4/Dog3 (1).svg"
+dest_files=["res://.godot/imported/Dog3 (1).svg-b571468681fa8c675e2944940b108b95.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtucgb2jnmx7j"
-path="res://.godot/imported/Dog4 (1).svg-ca9af277ed16c508e937598d65f9c5f2.ctex"
+uid="uid://cckbbua2qpmuy"
+path="res://.godot/imported/coki.svg-a5f8cdd741d8826368bc4395bad15c28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Personaje/Perros/Perro4/Dog4 (1).svg"
-dest_files=["res://.godot/imported/Dog4 (1).svg-ca9af277ed16c508e937598d65f9c5f2.ctex"]
+source_file="res://Personaje/Perros/Perro2/coki.svg"
+dest_files=["res://.godot/imported/coki.svg-a5f8cdd741d8826368bc4395bad15c28.ctex"]
 
 [params]
 

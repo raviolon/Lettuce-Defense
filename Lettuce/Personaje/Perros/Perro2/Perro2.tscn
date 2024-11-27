@@ -1,24 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://46csp4peanwi"]
+[gd_scene load_steps=5 format=3 uid="uid://biexd8d7sutge"]
 
-[ext_resource type="Script" path="res://Personaje/Perros/Perro1/Camino_Enemigos.gd" id="1_rax5o"]
-[ext_resource type="Texture2D" uid="uid://da8rqadjbdk0d" path="res://Personaje/Perros/Perro2/beagle.svg" id="2_aj6b7"]
+[ext_resource type="Script" path="res://Personaje/Perros/Perro2/Path_perro2.gd" id="1_ufdhk"]
+[ext_resource type="Script" path="res://Personaje/Perros/Perro2/Stats2.gd" id="2_fn13g"]
+[ext_resource type="Texture2D" uid="uid://cckbbua2qpmuy" path="res://Personaje/Perros/Perro2/coki.svg" id="2_h48ag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kt668"]
-size = Vector2(52, 45)
+size = Vector2(82, 50.25)
 
-[node name="Enemigos" type="Node2D"]
-script = ExtResource("1_rax5o")
+[node name="Enemigos" type="PathFollow2D"]
+script = ExtResource("1_ufdhk")
 
-[node name="Enemigo1" type="Area2D" parent="." groups=["Enemigos"]]
+[node name="Perro2" type="Area2D" parent="." groups=["Enemigos"]]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_fn13g")
 
-[node name="Enemigo" type="Sprite2D" parent="Enemigo1"]
-scale = Vector2(0.351928, 0.325827)
-texture = ExtResource("2_aj6b7")
+[node name="Enemigo" type="Sprite2D" parent="Perro2"]
+scale = Vector2(0.062519, 0.0578822)
+texture = ExtResource("2_h48ag")
 hframes = 2
 vframes = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemigo1"]
-position = Vector2(0, -1.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Perro2"]
+position = Vector2(-1, -0.875)
 shape = SubResource("RectangleShape2D_kt668")
-
-[connection signal="area_entered" from="Enemigo1" to="." method="_on_enemigo_1_area_entered"]

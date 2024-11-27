@@ -9,8 +9,12 @@ var choclo = preload("res://Personaje/Choclo/choclo.tscn")
 var tomate = preload("res://Personaje/Tomate/Tomate.tscn")
 var morron = preload("res://Personaje/Morron/morron.tscn")
 var naranja = preload("res://Personaje/Naranja/naranja.tscn")
-var Perro = preload("res://Personaje/Perros/Perro1/Perro1.tscn")
-var enemigos = 3
+var Perro1 = preload("res://Personaje/Perros/Perro1/Perro1.tscn")
+var Perro2 = preload("res://Personaje/Perros/Perro2/Perro2.tscn")
+var Perro3 = preload("res://Personaje/Perros/Perro3/Perro3.tscn")
+var Perro4 = preload("res://Personaje/Perros/Perro4/Perro4.tscn")
+var Perro5 = preload("res://Personaje/Perros/Perro5/Perro5.tscn")
+var enemigos = 35
 var enemigos_total = enemigos
 
 func _ready():
@@ -26,10 +30,10 @@ func game_win():
 
 func enemigo1():
 	var pos = $Mapa/Path2D
-	var enemigo1 = Perro.instantiate()
-	print(enemigo1.get_node("Enemigo1").vida)
-	enemigo1.global_position = Vector2(pos.global_position.x, pos.global_position.y)
-	get_node("Mapa/Path2D").add_child(enemigo1)
+	var Perro1_1 = Perro1.instantiate()
+	print(Perro1_1.get_node("Perro1").vida)
+	Perro1_1.global_position = Vector2(pos.global_position.x, pos.global_position.y)
+	get_node("Mapa/Path2D").add_child(Perro1_1)
 
 func _on_timer_timeout() -> void:
 	enemigo1()

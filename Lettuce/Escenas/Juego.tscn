@@ -140,6 +140,7 @@ scale = Vector2(0.365741, 0.398148)
 texture = ExtResource("7_hsqkx")
 
 [node name="GAMEOVER" type="CanvasLayer" parent="Mapa1/Mapa"]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Mapa1/Mapa/GAMEOVER"]
 offset_right = 1065.0
@@ -161,6 +162,7 @@ text = "NUEVO JUEGO
 "
 
 [node name="Button_Win" type="Button" parent="Mapa1/Mapa/GAMEOVER/ColorRect"]
+layout_mode = 0
 offset_left = 577.0
 offset_top = 501.0
 offset_right = 735.0
