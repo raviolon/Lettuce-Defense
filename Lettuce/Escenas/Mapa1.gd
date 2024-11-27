@@ -9,12 +9,17 @@ var choclo = preload("res://Personaje/Choclo/choclo.tscn")
 var tomate = preload("res://Personaje/Tomate/Tomate.tscn")
 var morron = preload("res://Personaje/Morron/morron.tscn")
 var naranja = preload("res://Personaje/Naranja/naranja.tscn")
+<<<<<<< HEAD
 var Perro1 = preload("res://Personaje/Perros/Perro1/Perro1.tscn")
 var Perro2 = preload("res://Personaje/Perros/Perro2/Perro2.tscn")
 var Perro3 = preload("res://Personaje/Perros/Perro3/Perro3.tscn")
 var Perro4 = preload("res://Personaje/Perros/Perro4/Perro4.tscn")
 var Perro5 = preload("res://Personaje/Perros/Perro5/Perro5.tscn")
 var enemigos = 35
+=======
+var Perro = preload("res://Personaje/Perros/Perro1/Perro1.tscn")
+var enemigos = 10
+>>>>>>> f7c2ee434d0e97ac4bc378674274fd5b5d4a8080
 var enemigos_total = enemigos
 
 func _ready():
@@ -52,14 +57,10 @@ func _process(delta):
 	if construir_modo and torre_instancia_temp != null:
 		var mouse_pos = get_global_mouse_position()
 		torre_instancia_temp.global_position = mouse_pos  
-
-		# Validar colisión para cambiar el color
 		if torre_instancia_temp.get_node("construc").get_overlapping_bodies().size() > 1:
 			torre_instancia_temp.modulate = Color(1, 0, 0, 0.5)  # Rojo si hay colisión
 		else:
 			torre_instancia_temp.modulate = Color(1, 1, 1, 0.5)  # Blanco si está libre
-
-	# Llama a game_win() para verificar si el juego ha sido ganado
 	game_win()
 
 func _input(event):
@@ -69,22 +70,16 @@ func _input(event):
 func colocar_torre_definitiva():
 	if torre_seleccionada == null or torre_instancia_temp == null:
 		return
-
-	# Validar colisión antes de colocar la torre
 	if torre_instancia_temp.get_node("construc").get_overlapping_bodies().size() > 1:
 		print("No se puede colocar aquí. El área está ocupada.")
 		return
-
-	# Colocar torre definitiva
 	torre_instancia_temp.queue_free()
 	torre_instancia_temp = null
-
 	var mouse_pos = get_global_mouse_position()
 	torre_instancia_final = torre_seleccionada.instantiate()
 	torre_instancia_final.global_position = mouse_pos
 	torre_instancia_final.set_construccion(false)
 	$Mapa/torres.add_child(torre_instancia_final)
-
 	construir_modo = false
 	print("Torre colocada en:", mouse_pos)
 
