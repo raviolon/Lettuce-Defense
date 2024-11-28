@@ -90,8 +90,8 @@
 .btn:hover {
     cursor: pointer;
     transform: scale(1.1); /* Hace que el botón crezca un 10% */
-    background-color: black; /* Cambia el color de fondo */
-    color: saddlebrown; /* Asegura que el texto siga siendo blanco */
+    background-color: black;
+    color: #a9d9a8; /* Asegura que el texto siga siendo blanco */
 }
 
 .nav_uno,
@@ -604,4 +604,9 @@ body {
 }
 .fotito{
     background-image: url(/img/fondo.jpg);
+}
+.logacio{
+    position: relative;
+    margin-top: -30%;
+
 }
