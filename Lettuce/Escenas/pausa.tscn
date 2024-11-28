@@ -20,18 +20,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.32549)
 
-[node name="TextEdit" type="TextEdit" parent="ColorRect"]
-layout_mode = 0
-offset_left = 340.0
-offset_top = 160.0
-offset_right = 680.0
-offset_bottom = 303.0
-text = "
-
-                                   PAUSA"
-editable = false
-scroll_smooth = true
-
 [node name="Button" type="Button" parent="ColorRect"]
 layout_mode = 0
 offset_left = 459.0
@@ -40,5 +28,15 @@ offset_right = 583.0
 offset_bottom = 473.0
 text = "Volver al menu
 "
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 182.0
+offset_right = 673.0
+offset_bottom = 319.0
+theme_override_colors/font_shadow_color = Color(0.85098, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Pausa"
 
 [connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
