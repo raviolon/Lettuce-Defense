@@ -5,7 +5,7 @@ var shoot = true
 var target_position = null
 var velocidad = 10
 var construccion = false
-var offset = Vector2.ZERO  # Para manejar el arrastre correctamente
+var offset = Vector2.ZERO  
 var area_valida = true
 func _ready():
 	connect("input_event", Callable(self, "_on_construc_input_event"))
@@ -13,10 +13,8 @@ func _ready():
 func _process(_delta):
 	_alert()
 	
-	# Si está en modo construcción, sigue el ratón
 	if construccion:
 		shoot = false
-	# Manejo del disparo
 	elif target_position and shoot:
 		$Verdura.look_at(target_position)
 		var b = municion.instantiate()
@@ -46,13 +44,13 @@ func set_construccion(state: bool) -> void:
 
 
 func _on_construccionhitbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Torres"):  # Si detecta otra torre
+	if area.is_in_group("Torres"):  
 		print("No se permite posicionar aquí.")
 		area_valida = false
-	pass # Replace with function body.
+	pass
 
 
 func _on_construccionhitbox_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Torres"):
 		area_valida = true
-	pass # Replace with function body.
+	pass 

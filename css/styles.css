@@ -83,15 +83,15 @@
     border: 0;
     font-family: Tiny5;
     margin: 20px;
-    border-radius: 10px; /* Agrega un poco de redondeo opcional */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Transición suave */
+    border-radius: 10px; 
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .btn:hover {
     cursor: pointer;
-    transform: scale(1.1); /* Hace que el botón crezca un 10% */
+    transform: scale(1.1); 
     background-color: black;
-    color: #a9d9a8; /* Asegura que el texto siga siendo blanco */
+    color: #a9d9a8;
 }
 
 .nav_uno,
@@ -195,14 +195,12 @@
 .logos:before {
     left: 0;
     background: rgb(112, 191, 110);
-    /* Fondo actualizado */
     background: linear-gradient(90deg, rgb(112, 191, 110) 0%, rgba(255, 255, 255, 0) 25%);
 }
 
 .logos:after {
     right: 0;
     background: rgb(112, 191, 110);
-    /* Fondo actualizado */
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 75%, rgb(112, 191, 110) 100%);
 }
 
@@ -341,27 +339,26 @@ margin:3%;
 
 .image-gallery {
     display: flex;
-    justify-content: space-between; /* Espacio igual entre imágenes y los márgenes laterales */
-    align-items: center; /* Alinea verticalmente las imágenes */
-    width: 80%; /* Ajusta el ancho del contenedor según tus necesidades */
-    max-width: 1200px; /* Ancho máximo para no hacer el contenedor demasiado ancho */
+    justify-content: space-between; 
+    align-items: center; 
+    width: 80%; 
+    max-width: 1200px; 
     margin-top:10%;
     margin: 30px auto;
 }
 
-/* Estilo para los elementos de la imagen */
 .feature-item {
-    flex: 1; /* Hace que cada item ocupe el mismo espacio */
+    flex: 1; 
     display: flex;
-    justify-content: center; /* Centra la imagen dentro del item */
+    justify-content: center; 
 }
 
-/* Estilo para las imágenes */
+
 .imagen-feature {
-    max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
+    max-width: 100%; 
     margin: 1px 10px;
-    height: auto; /* Mantiene la relación de aspecto de la imagen */
-    display: block; /* Elimina el espacio debajo de la imagen */
+    height: auto; 
+    display: block; 
 }
 
 .feature-item {
@@ -374,33 +371,30 @@ margin:3%;
 }
 
 .imagen-feature:hover {
-    opacity: 0.3; /* Cambia el valor de opacidad según tu preferencia */
+    opacity: 0.3;
 }
 
 .imagen-feature:hover + .texto-overlay {
     opacity: 1;
 }
 
-        /* Aseguramos que los contenedores de las imágenes tengan posición relativa */
         .image-container {
             position: relative;
             display: inline-block;
         }
 
-        /* Estilo para el texto overlay */
         .text-overlay {
             position: absolute;
-            top: 50%; /* Centra el texto verticalmente */
-            left: 50%; /* Centra el texto horizontalmente */
-            transform: translate(-50%, -50%); /* Ajuste para centrar completamente */
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
             color: white;
             font-size: 20px;
             font-weight: bold;
-            opacity: 0; /* Inicialmente el texto está oculto */
-            transition: opacity 0.3s ease-in-out; /* Animación de opacidad */
+            opacity: 0; 
+            transition: opacity 0.3s ease-in-out;
         }
 
-        /* Cuando se pasa el mouse por encima de la imagen, mostramos el texto */
         .image-container:hover .text-overlay {
             opacity: 1; /* El texto se vuelve visible */
         }
@@ -411,7 +405,7 @@ margin:3%;
 .feature-item:hover .texto-overlay {
     opacity: 1;
 }
- /* Estilos para el dropdown */
+
  .dropdown {
     position: relative;
     display: inline-block;
@@ -419,7 +413,7 @@ margin:3%;
 }
 
 .dropbtn {
-    background: none; /* Sin fondo */
+    background: none;
     color: #4CAF50;
     font-size: 16px;
     border: none;
@@ -430,7 +424,7 @@ margin:3%;
 }
 
 .dropbtn:hover {
-    color: #3e8e41; /* Cambio de color al pasar el mouse */
+    color: #3e8e41; 
 }
 
 .dropdown-content {
@@ -509,21 +503,21 @@ margin:3%;
 .corazones, .velocidad {
     max-width: 25px;
     max-height: 25px;
-    vertical-align: middle; /* Alinea las imágenes verticalmente con el texto */
-    margin-right: 5px; /* Opcional: Da algo de espacio entre las imágenes */
+    vertical-align: middle; 
+    margin-right: 5px; 
 }
 
 h3 {
-    display: inline-flex; /* Asegura que los elementos dentro del h3 estén alineados horizontalmente */
-    align-items: center;  /* Centra las imágenes verticalmente con el texto */
+    display: inline-flex;
+    align-items: center;  
 }
 .titperro {
     font-size: 100px;
-    display: flex;              /* Utiliza flexbox para alinear */
-    justify-content: center;         /* Utiliza toda la altura de la ventana del navegador */
-    margin: 0;                  /* Elimina cualquier margen por defecto */
+    display: flex;              
+    justify-content: center;        
+    margin: 0;                  
     text-align: center;  
-    font-family: Tiny5;       /* Alinea el texto al centro */
+    font-family: Tiny5;       
 }
 .tiny5-regular {
     font-family: "Tiny5", sans-serif;
@@ -539,15 +533,14 @@ h3 {
 
 /* Estilo para el body */
 body {
-    font-family: 'Tiny5', sans-serif;  /* Establece la fuente personalizada */
+    font-family: 'Tiny5', sans-serif; 
     display: flex;
-    flex-direction: column;  /* Distribuye los elementos de arriba hacia abajo */
-    min-height: 100vh;  /* Asegura que la página ocupe al menos el 100% de la altura */
+    flex-direction: column; 
+    min-height: 100vh; 
     background-color: black;
 
 }
 
-/* Asegura que el contenedor principal ocupe todo el espacio disponible */
 .content {
     flex: 1;  /* Hace que el contenido ocupe todo el espacio restante */
     padding: 20px;

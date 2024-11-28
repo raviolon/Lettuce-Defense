@@ -1,36 +1,31 @@
 extends CanvasLayer
 
-# Variable para controlar el estado de la visibilidad del ColorRect
 var presionado = false
 var color_rect
 
 func _ready():
-	# Inicializamos el nodo ColorRect
 	color_rect = get_node("ColorRect")
-	color_rect.visible = false  # Al principio el ColorRect no es visible
+	color_rect.visible = false  
 
 func _process(delta: float) -> void:
-	# Detectamos la tecla de pausa
 	if Input.is_action_just_pressed("Pausa"):
-		if color_rect.visible:  # Si el ColorRect está visible, lo ocultamos y reanudamos el juego
+		if color_rect.visible:  
 			color_rect.visible = false
-			get_tree().paused = false  # Reanudar el juego
-		else:  # Si el ColorRect no está visible, lo mostramos y pausamos el juego
+			get_tree().paused = false  
+		else:  
 			color_rect.visible = true
-			get_tree().paused = true  # Pausar el juego
-		presionado = true  # Aseguramos que no se vuelva a alternar hasta la siguiente pulsación
+			get_tree().paused = true  
+		presionado = true  #
 
 
 func _on_button_pressed() -> void:
-	# Asegúrate de despausar el juego antes de cambiar de escena
 	get_tree().paused = false
-	# Cambiar a la nueva escena (por ejemplo, al menú principal)
 	get_tree().change_scene_to_file("res://Escenas/Menu.tscn")
 
 
 func _on_timer_perro_5_timeout() -> void:
-	pass # Replace with function body.
+	pass 
 
 
 func _on_asd_pressed() -> void:
-	pass # Replace with function body.
+	pass 

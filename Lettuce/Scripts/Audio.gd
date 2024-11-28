@@ -14,4 +14,4 @@ func play_music():
 	_play_music(level_music)
 	
 func _on_finished():
-	self.play() # Replace with function body.
+	self.play() 

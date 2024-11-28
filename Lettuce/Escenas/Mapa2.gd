@@ -45,7 +45,6 @@ func game_win():
 		if ronda > 2:
 			var color_rect_sprite = get_tree().root.get_node("Juego/Mapa2/Mapa/GAMEWIN")
 			color_rect_sprite.visible = true
-			# Detener los temporizadores para los enemigos para que no sigan apareciendo
 			for i in range(1, 6):  # Para todos los temporizadores
 				var timer = get_node("../Timer_Perro" + str(i))
 				timer.stop()
@@ -93,9 +92,9 @@ func _process(delta):
 		var mouse_pos = get_global_mouse_position()
 		torre_instancia_temp.global_position = mouse_pos  
 		if torre_instancia_temp.get_node("construc").get_overlapping_bodies().size() > 1:
-			torre_instancia_temp.modulate = Color(1, 0, 0, 0.5)  # Rojo si hay colisión
+			torre_instancia_temp.modulate = Color(1, 0, 0, 0.5)  
 		else:
-			torre_instancia_temp.modulate = Color(1, 1, 1, 0.5)  # Blanco si está libre
+			torre_instancia_temp.modulate = Color(1, 1, 1, 0.5)
 
 func _input(event):
 	if construir_modo and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -193,7 +192,6 @@ func _on_timer_perro_5_timeout() -> void:
 	else:
 		$"../Timer_Perro5".start()
 
-# Verificación si todos los enemigos han sido derrotados
 func todos_enemigos_derrotados() -> bool:
 	for cantidad in enemigos.values():
 		if cantidad > 0:
@@ -205,32 +203,25 @@ func resetear_enemigos_y_pasar_ronda():
 	if todos_enemigos_derrotados():
 		if ronda < 3:
 			ronda += 1
-			# Recalcular las cantidades de enemigos para la nueva ronda
 			calcular_nuevos_valores()
 			print("Inicia la ronda:", ronda)
-			reiniciar_timers()  # Reinicia los temporizadores con las nuevas cantidades
+			reiniciar_timers()  
 	else:
 		print("Aún quedan enemigos por derrotar.")
 
-# Función para reiniciar los temporizadores de acuerdo a los enemigos restantes
-# Función para reiniciar los temporizadores de acuerdo a los enemigos restantes
 func reiniciar_timers():
-	# Detener todos los temporizadores antes de iniciar la siguiente ronda
 	for i in range(1, 6):
 		var timer = get_node_or_null("../Timer_Perro" + str(i))
 		if timer:
 			timer.stop()
 
-	# Iniciar solo los temporizadores de los enemigos que aún deben aparecer en esta ronda
 	for clave in enemigos.keys():
 		if enemigos[clave] > 0:
-			var timer = safe_get_node("../Timer_Perro" + str(clave[-1]))  # Obtiene el número del temporizador basado en la clave
+			var timer = safe_get_node("../Timer_Perro" + str(clave[-1])) 
 			if timer:
 				timer.start()
 
-# Función de seguridad para obtener el nodo sin generar errores
 func safe_get_node(path: String) -> Node:
-	# Intenta obtener el nodo y retorna null si no se encuentra
 	if has_node(path):
 		return get_node(path)
 	return null

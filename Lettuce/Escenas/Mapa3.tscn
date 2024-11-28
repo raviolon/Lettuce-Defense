@@ -121,6 +121,7 @@ point_count = 18
 [node name="Juego" type="Node2D"]
 
 [node name="Pausa" parent="." instance=ExtResource("1_swnw0")]
+visible = false
 
 [node name="Mapa3" type="Node2D" parent="."]
 script = ExtResource("2_ylajc")
