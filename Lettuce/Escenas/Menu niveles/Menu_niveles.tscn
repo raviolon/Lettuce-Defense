@@ -81,7 +81,7 @@ theme_override_font_sizes/font_size = 40
 text = "Volver al menu"
 flat = true
 
-[connection signal="pressed" from="Nivel 1" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Nivel 1" to="." method="_on_nivel_1_pressed"]
 [connection signal="pressed" from="Nivel 2" to="." method="_on_nivel_2_pressed"]
 [connection signal="pressed" from="Nivel 3" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="Menu" to="." method="_on_salir_pressed"]

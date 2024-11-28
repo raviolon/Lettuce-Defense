@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwv6fx0t5uvm0"
-path="res://.godot/imported/lechuga.jpg-e1f0222fb10d12ef25369c456efbb09b.ctex"
+uid="uid://b33horvqc3xgv"
+path="res://.godot/imported/letuce.svg-366db478fa2dd18b5818cf5d393f3d04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Personaje/Lechuga/lechuga.jpg"
-dest_files=["res://.godot/imported/lechuga.jpg-e1f0222fb10d12ef25369c456efbb09b.ctex"]
+source_file="res://Personaje/Lechuga/letuce.svg"
+dest_files=["res://.godot/imported/letuce.svg-366db478fa2dd18b5818cf5d393f3d04.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
