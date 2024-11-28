@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Escenas/Mapa1.gd" id="1_xyh3x"]
 [ext_resource type="Texture2D" uid="uid://b2muekgdp8qva" path="res://Mapas/tilemapes (1).svg" id="2_oylxd"]
 [ext_resource type="Script" path="res://Escenas/Mapa.gd" id="4_eh5g8"]
-[ext_resource type="Texture2D" uid="uid://blxps1u6qvq6n" path="res://Personaje/Game_Over/juego.png" id="7_0xho4"]
 [ext_resource type="Texture2D" uid="uid://5k50flxnqquw" path="res://Personaje/Tomate/tomate.svg" id="7_hsqkx"]
 [ext_resource type="Texture2D" uid="uid://bud21deq5f1kn" path="res://Personaje/Naranja/naranja.svg" id="8_70knx"]
 [ext_resource type="Texture2D" uid="uid://4gnguosk41n4" path="res://Personaje/Choclo/choclo.svg" id="8_b0pgd"]
+[ext_resource type="Texture2D" uid="uid://cv6h3k2sxmuwf" path="res://Personaje/Morron/carrot.svg" id="9_i33pd"]
 [ext_resource type="Texture2D" uid="uid://bwv6fx0t5uvm0" path="res://Personaje/Lechuga/lechuga.jpg" id="9_pnrbb"]
 [ext_resource type="Script" path="res://Scripts/canvas_layer_2.gd" id="10_hl4pk"]
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="12_l1jpe"]
@@ -155,19 +155,24 @@ text = "Choclooooo"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Mapa1/Mapa/UI/HUD"]
 
 [node name="Sprite2D" type="Sprite2D" parent="Mapa1/Mapa/UI"]
-position = Vector2(648, 709)
+position = Vector2(650, 720)
 scale = Vector2(0.365741, 0.398148)
 texture = ExtResource("7_hsqkx")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Mapa1/Mapa/UI"]
-position = Vector2(552, 717)
+position = Vector2(552, 720)
 scale = Vector2(0.38922, 0.414643)
 texture = ExtResource("8_70knx")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Mapa1/Mapa/UI"]
-position = Vector2(369, 719)
+position = Vector2(369, 720)
 scale = Vector2(0.38922, 0.414643)
 texture = ExtResource("8_b0pgd")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Mapa1/Mapa/UI"]
+position = Vector2(461, 720)
+scale = Vector2(0.38922, 0.420436)
+texture = ExtResource("9_i33pd")
 
 [node name="GAMEOVER" type="CanvasLayer" parent="Mapa1/Mapa"]
 visible = false
@@ -176,11 +181,6 @@ visible = false
 offset_right = 1065.0
 offset_bottom = 665.0
 color = Color(1, 0.270588, 1, 0.737255)
-
-[node name="Sprite2D" type="Sprite2D" parent="Mapa1/Mapa/GAMEOVER/ColorRect"]
-position = Vector2(538, 237)
-scale = Vector2(2.10345, 1.92797)
-texture = ExtResource("7_0xho4")
 
 [node name="Button_Lose" type="Button" parent="Mapa1/Mapa/GAMEOVER/ColorRect"]
 layout_mode = 0
@@ -199,6 +199,16 @@ offset_right = 735.0
 offset_bottom = 595.0
 text = "VOLVER AL MENU
 "
+
+[node name="Label" type="Label" parent="Mapa1/Mapa/GAMEOVER/ColorRect"]
+offset_left = 258.0
+offset_top = 184.0
+offset_right = 842.0
+offset_bottom = 321.0
+theme_override_colors/font_shadow_color = Color(0.85098, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Has perdido"
+horizontal_alignment = 1
 
 [node name="torres" type="Node2D" parent="Mapa1/Mapa" groups=["Torres"]]
 scale = Vector2(0.333333, 0.333333)

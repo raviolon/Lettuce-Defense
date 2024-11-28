@@ -1,27 +1,28 @@
 [gd_scene load_steps=6 format=3 uid="uid://hij5ux6lf0kd"]
 
 [ext_resource type="Script" path="res://Scripts/Torres/Morron.gd" id="1_hfhje"]
-[ext_resource type="Texture2D" uid="uid://bhfso6urft85k" path="res://Personaje/Morron/Morron rojo.jpg" id="2_sm1vd"]
+[ext_resource type="Texture2D" uid="uid://cv6h3k2sxmuwf" path="res://Personaje/Morron/carrot.svg" id="2_wfbeg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ryw"]
-size = Vector2(101, 88)
+size = Vector2(72.5, 83)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4mqvj"]
 radius = 85.8662
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aa2k5"]
-size = Vector2(101.5, 120)
+size = Vector2(67.75, 83)
 
 [node name="Morron" type="CharacterBody2D" groups=["Torres"]]
 position = Vector2(538, 331)
 script = ExtResource("1_hfhje")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14.25, 2.5)
 shape = SubResource("RectangleShape2D_n0ryw")
 
 [node name="Verdura" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.240331)
-texture = ExtResource("2_sm1vd")
+scale = Vector2(0.301587, 0.36612)
+texture = ExtResource("2_wfbeg")
 
 [node name="Mira" type="Marker2D" parent="Verdura"]
 position = Vector2(430, 0)
@@ -38,7 +39,6 @@ autostart = true
 [node name="construc" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="construc"]
-position = Vector2(0.25, 1)
 shape = SubResource("RectangleShape2D_aa2k5")
 
 [connection signal="area_entered" from="Rango" to="." method="_on_rango_area_entered"]
