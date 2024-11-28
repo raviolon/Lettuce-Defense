@@ -1,6 +1,6 @@
 extends Node2D
 
-var municion = preload("res://Escenas/Balas.tscn")
+var municion = preload("res://Escenas/Balas/BalasChoclo.tscn")
 var shoot = true
 var target_position = null
 var velocidad = 10

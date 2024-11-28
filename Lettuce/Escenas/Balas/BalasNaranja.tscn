@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://h0g8xe00yfk0"]
+
+[ext_resource type="Script" path="res://Escenas/Scripts.gd" id="1_dqac3"]
+[ext_resource type="Texture2D" uid="uid://cxvgdreeu41x5" path="res://Mapas/Naranja.png" id="2_j7h4s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r8bc1"]
+
+[node name="Balas" type="Node2D" groups=["proyectil"]]
+
+[node name="Area2D" type="Area2D" parent="." groups=["proyectil"]]
+script = ExtResource("1_dqac3")
+
+[node name="Bala" type="Sprite2D" parent="Area2D" groups=["proyectil"]]
+scale = Vector2(0.4, 0.37)
+texture = ExtResource("2_j7h4s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["proyectil"]]
+shape = SubResource("CircleShape2D_r8bc1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." groups=["proyectil"]]
+scale = Vector2(0.35, 0.325)
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="Area2D" method="_on_visible_on_screen_notifier_2d_screen_exited"]
