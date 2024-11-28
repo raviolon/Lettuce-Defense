@@ -78,14 +78,20 @@
     background-color: rgb(112, 191, 110);
     color: white;
     padding: 10px;
-    border-radius: 30px 30px 30px 30px;
     height: 50px;
     width: 200px;
     border: 0;
+    font-family: Tiny5;
+    margin: 20px;
+    border-radius: 10px; /* Agrega un poco de redondeo opcional */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transición suave */
 }
 
 .btn:hover {
     cursor: pointer;
+    transform: scale(1.1); /* Hace que el botón crezca un 10% */
+    background-color: black; /* Cambia el color de fondo */
+    color: saddlebrown; /* Asegura que el texto siga siendo blanco */
 }
 
 .nav_uno,
@@ -247,7 +253,7 @@ a:hover {
 }
 
 .content {
-    background-color: black;
+    background-image: url(/img/descarga.jpg);
     color: white; 
     
 }
@@ -537,7 +543,8 @@ body {
     display: flex;
     flex-direction: column;  /* Distribuye los elementos de arriba hacia abajo */
     min-height: 100vh;  /* Asegura que la página ocupe al menos el 100% de la altura */
-    background-color: #f1f1f1;  /* Color de fondo suave */
+    background-color: black;
+
 }
 
 /* Asegura que el contenedor principal ocupe todo el espacio disponible */
@@ -576,3 +583,25 @@ body {
 }
 
 
+.wos {
+    
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh; 
+        margin: 0; 
+    
+}
+.botones-container {
+    margin-top: 10%;
+    position: absolute;
+}
+
+.eusebio {
+    background-image: url(/img/fondo.jpg) !important; 
+    width: auto;
+    background-color: black;
+}
+.fotito{
+    background-image: url(/img/fondo.jpg);
+}
