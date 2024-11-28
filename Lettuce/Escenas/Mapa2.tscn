@@ -233,7 +233,7 @@ visible = false
 [node name="ColorRect" type="ColorRect" parent="Mapa2/Mapa/GAMEOVER"]
 offset_right = 1065.0
 offset_bottom = 665.0
-color = Color(1, 0.270588, 1, 0.737255)
+color = Color(1, 0.133333, 0, 0.768627)
 
 [node name="Button_Lose" type="Button" parent="Mapa2/Mapa/GAMEOVER/ColorRect"]
 layout_mode = 0
@@ -276,6 +276,7 @@ offset_bottom = 665.0
 color = Color(0, 0.766935, 0.584371, 0.737255)
 
 [node name="Label" type="Label" parent="Mapa2/Mapa/GAMEWIN/ColorRect"]
+layout_mode = 0
 offset_left = 337.0
 offset_top = 190.0
 offset_right = 735.0

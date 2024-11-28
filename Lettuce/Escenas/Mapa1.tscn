@@ -250,6 +250,7 @@ offset_bottom = 665.0
 color = Color(0, 0.766935, 0.584371, 0.737255)
 
 [node name="Label" type="Label" parent="Mapa1/Mapa/GAMEWIN/ColorRect"]
+layout_mode = 0
 offset_left = 338.0
 offset_top = 223.0
 offset_right = 736.0
