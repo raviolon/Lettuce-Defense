@@ -87,6 +87,7 @@ func _on_button_lose_pressed() -> void:
 	Global.nivel = 1
 
 func _process(delta):
+	Global.ronda = ronda
 	if construir_modo and torre_instancia_temp != null:
 		var mouse_pos = get_global_mouse_position()
 		torre_instancia_temp.global_position = mouse_pos  

@@ -22,18 +22,22 @@ color = Color(1, 1, 1, 0.32549)
 
 [node name="TextEdit" type="TextEdit" parent="ColorRect"]
 layout_mode = 0
-offset_left = 384.0
-offset_top = 263.0
-offset_right = 724.0
-offset_bottom = 406.0
-text = "PAUSA"
+offset_left = 340.0
+offset_top = 160.0
+offset_right = 680.0
+offset_bottom = 303.0
+text = "
+
+                                   PAUSA"
+editable = false
+scroll_smooth = true
 
 [node name="Button" type="Button" parent="ColorRect"]
 layout_mode = 0
-offset_left = 488.0
-offset_top = 466.0
-offset_right = 591.0
-offset_bottom = 513.0
+offset_left = 459.0
+offset_top = 426.0
+offset_right = 583.0
+offset_bottom = 473.0
 text = "Volver al menu
 "
 
