@@ -199,6 +199,34 @@ position = Vector2(461, 720)
 scale = Vector2(0.38922, 0.420436)
 texture = ExtResource("9_gitfr")
 
+[node name="Label" type="Label" parent="Mapa2/Mapa/UI"]
+offset_left = 634.0
+offset_top = 746.0
+offset_right = 674.0
+offset_bottom = 769.0
+text = "$ 50"
+
+[node name="Label2" type="Label" parent="Mapa2/Mapa/UI"]
+offset_left = 536.0
+offset_top = 746.0
+offset_right = 576.0
+offset_bottom = 769.0
+text = "$ 150"
+
+[node name="Label3" type="Label" parent="Mapa2/Mapa/UI"]
+offset_left = 439.0
+offset_top = 745.0
+offset_right = 479.0
+offset_bottom = 768.0
+text = "$ 150"
+
+[node name="Label4" type="Label" parent="Mapa2/Mapa/UI"]
+offset_left = 348.0
+offset_top = 746.0
+offset_right = 389.0
+offset_bottom = 769.0
+text = "$ 100"
+
 [node name="GAMEOVER" type="CanvasLayer" parent="Mapa2/Mapa"]
 visible = false
 
@@ -247,16 +275,26 @@ offset_right = 1065.0
 offset_bottom = 665.0
 color = Color(0, 0.766935, 0.584371, 0.737255)
 
+[node name="Label" type="Label" parent="Mapa2/Mapa/GAMEWIN/ColorRect"]
+offset_left = 337.0
+offset_top = 190.0
+offset_right = 735.0
+offset_bottom = 327.0
+theme_override_colors/font_shadow_color = Color(0.85098, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Ganaste"
+horizontal_alignment = 1
+
 [node name="Sprite2D" type="Sprite2D" parent="Mapa2/Mapa/GAMEWIN/ColorRect"]
 position = Vector2(487, 315)
 scale = Vector2(-0.304024, 0.406331)
 
 [node name="Button_Win" type="Button" parent="Mapa2/Mapa/GAMEWIN/ColorRect"]
 layout_mode = 0
-offset_left = 379.0
-offset_top = 531.0
-offset_right = 537.0
-offset_bottom = 625.0
+offset_left = 446.0
+offset_top = 508.0
+offset_right = 604.0
+offset_bottom = 602.0
 text = "VOLVER AL MENU
 "
 
@@ -326,13 +364,13 @@ position = Vector2(1012, 451)
 [connection signal="pressed" from="Mapa2/Mapa/UI/HUD/PanelContainer/BoxContainer/Morron" to="Mapa2" method="_on_morron_pressed"]
 [connection signal="pressed" from="Mapa2/Mapa/UI/HUD/PanelContainer/BoxContainer/Naranja" to="Mapa2" method="_on_naranja_pressed"]
 [connection signal="pressed" from="Mapa2/Mapa/UI/HUD/PanelContainer/BoxContainer/Tomate" to="Mapa2" method="_on_tomate_pressed"]
-[connection signal="pressed" from="Mapa2/Mapa/GAMEOVER/ColorRect/Button_Lose" to="Mapa2" method="_on_button_lose_pressed"]
 [connection signal="pressed" from="Mapa2/Mapa/GAMEOVER/ColorRect/Button_Lose" to="Mapa2" method="_on_button_pressed"]
-[connection signal="pressed" from="Mapa2/Mapa/GAMEOVER/ColorRect/Button_Win" to="Mapa2" method="_on_button_win_pressed"]
+[connection signal="pressed" from="Mapa2/Mapa/GAMEOVER/ColorRect/Button_Lose" to="Mapa2" method="_on_button_lose_pressed"]
 [connection signal="pressed" from="Mapa2/Mapa/GAMEOVER/ColorRect/Button_Win" to="Mapa2" method="_on_button_pressed"]
+[connection signal="pressed" from="Mapa2/Mapa/GAMEOVER/ColorRect/Button_Win" to="Mapa2" method="_on_button_win_pressed"]
 [connection signal="child_entered_tree" from="Mapa2/Mapa/torres" to="Mapa2" method="_on_torres_child_entered_tree"]
-[connection signal="pressed" from="Mapa2/Mapa/GAMEWIN/ColorRect/Button_Win" to="Mapa2" method="_on_button_win_pressed"]
 [connection signal="pressed" from="Mapa2/Mapa/GAMEWIN/ColorRect/Button_Win" to="Mapa2" method="_on_button_pressed"]
+[connection signal="pressed" from="Mapa2/Mapa/GAMEWIN/ColorRect/Button_Win" to="Mapa2" method="_on_button_win_pressed"]
 [connection signal="timeout" from="Timer_Perro5" to="Mapa2" method="_on_timer_perro_5_timeout"]
 [connection signal="timeout" from="Timer_Perro4" to="Mapa2" method="_on_timer_perro_4_timeout"]
 [connection signal="timeout" from="Timer_Perro3" to="Mapa2" method="_on_timer_perro_3_timeout"]

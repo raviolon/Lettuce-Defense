@@ -2,7 +2,7 @@ extends Area2D
 
 const DOWN = Vector2.DOWN
 var velocidad: int = 1
-var daño: int = 2 # El daño que hace la bala
+var daño: int = 3 # El daño que hace la bala
 
 func _ready():
 	add_to_group("proyectil")  # Asegura que la bala está en el grupo 'proyectil'
