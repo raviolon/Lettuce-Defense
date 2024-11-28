@@ -4,7 +4,6 @@ var vida = 10
 # Método para recibir daño de la bala
 func receive_damage(damage: int) -> void:
 	vida -= damage
-	print("Vida del enemigo:", vida)  # Depuración: Verifica que la vida se reduce
 	_vida()
 
 func _on_enemigo_1_area_entered(area: Area2D) -> void:

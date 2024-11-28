@@ -26,3 +26,7 @@ func _on_button_pressed() -> void:
 	get_tree().paused = false
 	# Cambiar a la nueva escena (por ejemplo, al menú principal)
 	get_tree().change_scene_to_file("res://Escenas/Menu.tscn")
+
+
+func _on_timer_perro_5_timeout() -> void:
+	pass # Replace with function body.

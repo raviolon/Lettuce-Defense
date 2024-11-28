@@ -236,10 +236,17 @@ text = "Dinero: "
 
 [node name="Nivel" type="Label" parent="CanvasLayer"]
 offset_left = -1.0
-offset_top = 695.0
+offset_top = 702.0
 offset_right = 182.0
-offset_bottom = 747.0
+offset_bottom = 737.0
 text = "Nivel:"
+
+[node name="Rondas" type="Label" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = 676.0
+offset_right = 184.0
+offset_bottom = 711.0
+text = "Ronda:"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 script = ExtResource("10_hl4pk")
@@ -252,7 +259,23 @@ offset_bottom = 733.0
 text = "Vida:
 "
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer_Perro5" type="Timer" parent="."]
+wait_time = 5.6
+autostart = true
+
+[node name="Timer_Perro4" type="Timer" parent="."]
+wait_time = 4.3
+autostart = true
+
+[node name="Timer_Perro3" type="Timer" parent="."]
+wait_time = 3.7
+autostart = true
+
+[node name="Timer_Perro2" type="Timer" parent="."]
+wait_time = 2.3
+autostart = true
+
+[node name="Timer_Perro1" type="Timer" parent="."]
 wait_time = 1.5
 autostart = true
 
@@ -263,11 +286,15 @@ position = Vector2(1008, 264)
 [connection signal="pressed" from="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer/Morron" to="Mapa1" method="_on_morron_pressed"]
 [connection signal="pressed" from="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer/Naranja" to="Mapa1" method="_on_naranja_pressed"]
 [connection signal="pressed" from="Mapa1/Mapa/UI/HUD/PanelContainer/BoxContainer/Tomate" to="Mapa1" method="_on_tomate_pressed"]
-[connection signal="pressed" from="Mapa1/Mapa/GAMEOVER/ColorRect/Button_Lose" to="Mapa1" method="_on_button_pressed"]
 [connection signal="pressed" from="Mapa1/Mapa/GAMEOVER/ColorRect/Button_Lose" to="Mapa1" method="_on_button_lose_pressed"]
-[connection signal="pressed" from="Mapa1/Mapa/GAMEOVER/ColorRect/Button_Win" to="Mapa1" method="_on_button_pressed"]
+[connection signal="pressed" from="Mapa1/Mapa/GAMEOVER/ColorRect/Button_Lose" to="Mapa1" method="_on_button_pressed"]
 [connection signal="pressed" from="Mapa1/Mapa/GAMEOVER/ColorRect/Button_Win" to="Mapa1" method="_on_button_win_pressed"]
+[connection signal="pressed" from="Mapa1/Mapa/GAMEOVER/ColorRect/Button_Win" to="Mapa1" method="_on_button_pressed"]
 [connection signal="child_entered_tree" from="Mapa1/Mapa/torres" to="Mapa1" method="_on_torres_child_entered_tree"]
-[connection signal="pressed" from="Mapa1/Mapa/GAMEWIN/ColorRect/Button_Win" to="Mapa1" method="_on_button_pressed"]
 [connection signal="pressed" from="Mapa1/Mapa/GAMEWIN/ColorRect/Button_Win" to="Mapa1" method="_on_button_win_pressed"]
-[connection signal="timeout" from="Timer" to="Mapa1" method="_on_timer_timeout"]
+[connection signal="pressed" from="Mapa1/Mapa/GAMEWIN/ColorRect/Button_Win" to="Mapa1" method="_on_button_pressed"]
+[connection signal="timeout" from="Timer_Perro5" to="Mapa1" method="_on_timer_perro_5_timeout"]
+[connection signal="timeout" from="Timer_Perro4" to="Mapa1" method="_on_timer_perro_4_timeout"]
+[connection signal="timeout" from="Timer_Perro3" to="Mapa1" method="_on_timer_perro_3_timeout"]
+[connection signal="timeout" from="Timer_Perro2" to="Mapa1" method="_on_timer_perro_2_timeout"]
+[connection signal="timeout" from="Timer_Perro1" to="Mapa1" method="_on_timer_perro_1_timeout"]
