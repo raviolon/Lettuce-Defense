@@ -7,7 +7,7 @@
 size = Vector2(101, 88)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4mqvj"]
-radius = 160.078
+radius = 129.035
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0y6lg"]
 radius = 14.1204
@@ -25,7 +25,7 @@ scale = Vector2(0.42, 0.504)
 texture = ExtResource("2_eiyog")
 
 [node name="Mira" type="Marker2D" parent="Verdura"]
-position = Vector2(144.118, -151.961)
+position = Vector2(202.381, -190.476)
 
 [node name="Rango" type="Area2D" parent="."]
 

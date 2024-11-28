@@ -19,8 +19,8 @@ texture = ExtResource("2_yo6jy")
 shape = SubResource("CircleShape2D_5oa02")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." groups=["proyectil"]]
-position = Vector2(1.90735e-06, 0)
-scale = Vector2(0.4, 0.425)
+position = Vector2(9.53674e-07, 7.15256e-07)
+scale = Vector2(1.5, 1.2)
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="Area2D" method="_on_visible_on_screen_notifier_2d_screen_exited"]
