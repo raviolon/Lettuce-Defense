@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bud21deq5f1kn" path="res://Personaje/Naranja/naranja.svg" id="8_70knx"]
 [ext_resource type="Texture2D" uid="uid://4gnguosk41n4" path="res://Personaje/Choclo/choclo.svg" id="8_b0pgd"]
 [ext_resource type="Texture2D" uid="uid://cv6h3k2sxmuwf" path="res://Personaje/Morron/carrot.svg" id="9_i33pd"]
-[ext_resource type="Texture2D" uid="uid://bwv6fx0t5uvm0" path="res://Personaje/Lechuga/lechuga.jpg" id="9_pnrbb"]
+[ext_resource type="Texture2D" path="res://Personaje/Lechuga/lechuga.jpg" id="9_pnrbb"]
 [ext_resource type="Script" path="res://Scripts/canvas_layer_2.gd" id="10_hl4pk"]
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="12_l1jpe"]
 [ext_resource type="PackedScene" uid="uid://d3mo17c02s3l0" path="res://Escenas/Lechuga.tscn" id="13_lg3gn"]
@@ -180,27 +180,28 @@ visible = false
 [node name="ColorRect" type="ColorRect" parent="Mapa1/Mapa/GAMEOVER"]
 offset_right = 1065.0
 offset_bottom = 665.0
-color = Color(1, 0.270588, 1, 0.737255)
+color = Color(1, 0.133333, 0, 0.768627)
 
 [node name="Button_Lose" type="Button" parent="Mapa1/Mapa/GAMEOVER/ColorRect"]
 layout_mode = 0
-offset_left = 334.0
-offset_top = 495.0
-offset_right = 492.0
-offset_bottom = 589.0
+offset_left = 354.0
+offset_top = 498.0
+offset_right = 512.0
+offset_bottom = 592.0
 text = "NUEVO JUEGO
 "
 
 [node name="Button_Win" type="Button" parent="Mapa1/Mapa/GAMEOVER/ColorRect"]
 layout_mode = 0
-offset_left = 577.0
-offset_top = 501.0
-offset_right = 735.0
-offset_bottom = 595.0
+offset_left = 598.0
+offset_top = 498.0
+offset_right = 779.0
+offset_bottom = 592.0
 text = "VOLVER AL MENU
 "
 
 [node name="Label" type="Label" parent="Mapa1/Mapa/GAMEOVER/ColorRect"]
+layout_mode = 0
 offset_left = 258.0
 offset_top = 184.0
 offset_right = 842.0
