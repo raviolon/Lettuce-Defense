@@ -7,5 +7,5 @@ func _on_area_entered(area: Area2D) -> void:
 	
 func _game_over():
 	if Global.vida <= 0:
-		var color_rect_sprite = get_tree().root.get_node("Juego/Mapa1/Mapa/GAMEOVER")
+		var color_rect_sprite = get_tree().root.get_node("Juego/Mapa2/Mapa/GAMEOVER")
 		color_rect_sprite.visible = true

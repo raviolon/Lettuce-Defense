@@ -36,13 +36,14 @@ var enemigos = {
 var ronda = 1
 
 func _ready():
+	Global.vida = 10
 	Global.enemigos_muertos = 0
 	Global.cash = 200
 	map_nodo = $Mapa
 
 func game_win():
 		if ronda > 2:
-			var color_rect_sprite = get_tree().root.get_node("Juego/Mapa1/Mapa/GAMEWIN")
+			var color_rect_sprite = get_tree().root.get_node("Juego/Mapa2/Mapa/GAMEWIN")
 			color_rect_sprite.visible = true
 			# Detener los temporizadores para los enemigos para que no sigan apareciendo
 			for i in range(1, 6):  # Para todos los temporizadores

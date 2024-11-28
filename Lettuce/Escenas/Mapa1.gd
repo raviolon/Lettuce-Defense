@@ -36,6 +36,7 @@ var enemigos = {
 var ronda = 1
 
 func _ready():
+	Global.vida = 10
 	Global.enemigos_muertos = 0
 	Global.cash = 200
 	map_nodo = $Mapa

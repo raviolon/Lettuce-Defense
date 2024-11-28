@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cc8fjpqowvvov"]
+[gd_scene load_steps=20 format=3 uid="uid://lt0kc8lhftei"]
 
 [ext_resource type="PackedScene" uid="uid://d2caarta7r8bk" path="res://Escenas/pausa.tscn" id="1_4v0lq"]
 [ext_resource type="Script" path="res://Escenas/Mapa2.gd" id="2_gthkc"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bud21deq5f1kn" path="res://Personaje/Naranja/naranja.svg" id="7_cxfhm"]
 [ext_resource type="Texture2D" uid="uid://4gnguosk41n4" path="res://Personaje/Choclo/choclo.svg" id="8_pd1ub"]
 [ext_resource type="Texture2D" uid="uid://cv6h3k2sxmuwf" path="res://Personaje/Morron/carrot.svg" id="9_gitfr"]
-[ext_resource type="Texture2D" uid="uid://bwv6fx0t5uvm0" path="res://Personaje/Lechuga/lechuga.jpg" id="10_bqybm"]
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="11_o14h1"]
 [ext_resource type="Script" path="res://Scripts/canvas_layer_2.gd" id="12_ppu6x"]
 [ext_resource type="PackedScene" uid="uid://d3mo17c02s3l0" path="res://Escenas/Lechuga.tscn" id="13_yr8o0"]
@@ -106,7 +105,6 @@ point_count = 18
 [node name="Juego" type="Node2D"]
 
 [node name="Pausa" parent="." instance=ExtResource("1_4v0lq")]
-visible = false
 
 [node name="Mapa2" type="Node2D" parent="."]
 script = ExtResource("2_gthkc")
@@ -252,7 +250,6 @@ color = Color(0, 0.766935, 0.584371, 0.737255)
 [node name="Sprite2D" type="Sprite2D" parent="Mapa2/Mapa/GAMEWIN/ColorRect"]
 position = Vector2(487, 315)
 scale = Vector2(-0.304024, 0.406331)
-texture = ExtResource("10_bqybm")
 
 [node name="Button_Win" type="Button" parent="Mapa2/Mapa/GAMEWIN/ColorRect"]
 layout_mode = 0
@@ -329,13 +326,13 @@ position = Vector2(1012, 451)
 [connection signal="pressed" from="Mapa2/Mapa/UI/HUD/PanelContainer/BoxContainer/Morron" to="Mapa2" method="_on_morron_pressed"]
 [connection signal="pressed" from="Mapa2/Mapa/UI/HUD/PanelContainer/BoxContainer/Naranja" to="Mapa2" method="_on_naranja_pressed"]
 [connection signal="pressed" from="Mapa2/Mapa/UI/HUD/PanelContainer/BoxContainer/Tomate" to="Mapa2" method="_on_tomate_pressed"]
-[connection signal="pressed" from="Mapa2/Mapa/GAMEOVER/ColorRect/Button_Lose" to="Mapa2" method="_on_button_pressed"]
 [connection signal="pressed" from="Mapa2/Mapa/GAMEOVER/ColorRect/Button_Lose" to="Mapa2" method="_on_button_lose_pressed"]
-[connection signal="pressed" from="Mapa2/Mapa/GAMEOVER/ColorRect/Button_Win" to="Mapa2" method="_on_button_pressed"]
+[connection signal="pressed" from="Mapa2/Mapa/GAMEOVER/ColorRect/Button_Lose" to="Mapa2" method="_on_button_pressed"]
 [connection signal="pressed" from="Mapa2/Mapa/GAMEOVER/ColorRect/Button_Win" to="Mapa2" method="_on_button_win_pressed"]
+[connection signal="pressed" from="Mapa2/Mapa/GAMEOVER/ColorRect/Button_Win" to="Mapa2" method="_on_button_pressed"]
 [connection signal="child_entered_tree" from="Mapa2/Mapa/torres" to="Mapa2" method="_on_torres_child_entered_tree"]
-[connection signal="pressed" from="Mapa2/Mapa/GAMEWIN/ColorRect/Button_Win" to="Mapa2" method="_on_button_pressed"]
 [connection signal="pressed" from="Mapa2/Mapa/GAMEWIN/ColorRect/Button_Win" to="Mapa2" method="_on_button_win_pressed"]
+[connection signal="pressed" from="Mapa2/Mapa/GAMEWIN/ColorRect/Button_Win" to="Mapa2" method="_on_button_pressed"]
 [connection signal="timeout" from="Timer_Perro5" to="Mapa2" method="_on_timer_perro_5_timeout"]
 [connection signal="timeout" from="Timer_Perro4" to="Mapa2" method="_on_timer_perro_4_timeout"]
 [connection signal="timeout" from="Timer_Perro3" to="Mapa2" method="_on_timer_perro_3_timeout"]
