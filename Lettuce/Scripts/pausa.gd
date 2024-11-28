@@ -30,3 +30,7 @@ func _on_button_pressed() -> void:
 
 func _on_timer_perro_5_timeout() -> void:
 	pass # Replace with function body.
+
+
+func _on_asd_pressed() -> void:
+	pass # Replace with function body.
