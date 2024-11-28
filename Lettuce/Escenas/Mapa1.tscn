@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://4mu7b7cpdsyd"]
+[gd_scene load_steps=18 format=3 uid="uid://cdbr6wpgcwoss"]
 
 [ext_resource type="PackedScene" uid="uid://d2caarta7r8bk" path="res://Escenas/pausa.tscn" id="1_c84wy"]
 [ext_resource type="Script" path="res://Escenas/Mapa1.gd" id="2_6tqh3"]
@@ -80,7 +80,6 @@ point_count = 15
 [node name="Juego" type="Node2D"]
 
 [node name="Pausa" parent="." instance=ExtResource("1_c84wy")]
-visible = false
 
 [node name="Mapa1" type="Node2D" parent="."]
 script = ExtResource("2_6tqh3")
@@ -174,6 +173,34 @@ position = Vector2(461, 720)
 scale = Vector2(0.38922, 0.420436)
 texture = ExtResource("9_bjl8m")
 
+[node name="Label" type="Label" parent="Mapa1/Mapa/UI"]
+offset_left = 634.0
+offset_top = 746.0
+offset_right = 674.0
+offset_bottom = 769.0
+text = "$ 50"
+
+[node name="Label2" type="Label" parent="Mapa1/Mapa/UI"]
+offset_left = 536.0
+offset_top = 746.0
+offset_right = 576.0
+offset_bottom = 769.0
+text = "$ 150"
+
+[node name="Label3" type="Label" parent="Mapa1/Mapa/UI"]
+offset_left = 439.0
+offset_top = 745.0
+offset_right = 479.0
+offset_bottom = 768.0
+text = "$ 150"
+
+[node name="Label4" type="Label" parent="Mapa1/Mapa/UI"]
+offset_left = 348.0
+offset_top = 746.0
+offset_right = 389.0
+offset_bottom = 769.0
+text = "$ 100"
+
 [node name="GAMEOVER" type="CanvasLayer" parent="Mapa1/Mapa"]
 visible = false
 
@@ -222,16 +249,27 @@ offset_right = 1065.0
 offset_bottom = 665.0
 color = Color(0, 0.766935, 0.584371, 0.737255)
 
+[node name="Label" type="Label" parent="Mapa1/Mapa/GAMEWIN/ColorRect"]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 223.0
+offset_right = 736.0
+offset_bottom = 360.0
+theme_override_colors/font_shadow_color = Color(0.85098, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Ganaste"
+horizontal_alignment = 1
+
 [node name="Sprite2D" type="Sprite2D" parent="Mapa1/Mapa/GAMEWIN/ColorRect"]
 position = Vector2(487, 315)
 scale = Vector2(-0.304024, 0.406331)
 
 [node name="Button_Win" type="Button" parent="Mapa1/Mapa/GAMEWIN/ColorRect"]
 layout_mode = 0
-offset_left = 379.0
-offset_top = 531.0
-offset_right = 537.0
-offset_bottom = 625.0
+offset_left = 449.0
+offset_top = 509.0
+offset_right = 607.0
+offset_bottom = 603.0
 text = "VOLVER AL MENU
 "
 

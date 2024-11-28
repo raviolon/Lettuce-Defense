@@ -1,5 +1,5 @@
 extends Node2D
-var vida = 10
+var vida = 20
 
 # Método para recibir daño de la bala
 func receive_damage(damage: int) -> void:

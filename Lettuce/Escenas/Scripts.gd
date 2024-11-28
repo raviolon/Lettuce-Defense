@@ -1,6 +1,7 @@
 extends Area2D
 
 const DOWN = Vector2.DOWN
+
 var velocidad: int = 0.25
 var daño: int = 2 # El daño que hace la bala
 

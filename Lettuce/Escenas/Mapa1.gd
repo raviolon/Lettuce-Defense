@@ -36,6 +36,7 @@ var enemigos = {
 var ronda = 1
 
 func _ready():
+	Global.vida = 10
 	Global.enemigos_muertos = 0
 	Global.cash = 200
 	map_nodo = $Mapa
@@ -95,7 +96,6 @@ func _process(delta):
 			torre_instancia_temp.modulate = Color(1, 0, 0, 0.5)  # Rojo si hay colisión
 		else:
 			torre_instancia_temp.modulate = Color(1, 1, 1, 0.5)  # Blanco si está libre
-	game_win()
 
 func _input(event):
 	if construir_modo and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -197,6 +197,7 @@ func _on_timer_perro_5_timeout() -> void:
 func todos_enemigos_derrotados() -> bool:
 	for cantidad in enemigos.values():
 		if cantidad > 0:
+			game_win()
 			return false
 	return true
 
@@ -209,7 +210,8 @@ func resetear_enemigos_y_pasar_ronda():
 			print("Inicia la ronda:", ronda)
 			reiniciar_timers()  # Reinicia los temporizadores con las nuevas cantidades
 		else:
-			game_win()  # Si es la ronda 2, ganar el juego
+			pass
+			  # Si es la ronda 2, ganar el juego
 	else:
 		print("Aún quedan enemigos por derrotar.")
 

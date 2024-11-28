@@ -42,7 +42,7 @@ func _ready():
 
 func game_win():
 		if ronda > 2:
-			var color_rect_sprite = get_tree().root.get_node("Juego/Mapa1/Mapa/GAMEWIN")
+			var color_rect_sprite = get_tree().root.get_node("Juego/Mapa3/Mapa/GAMEWIN")
 			color_rect_sprite.visible = true
 			# Detener los temporizadores para los enemigos para que no sigan apareciendo
 			for i in range(1, 6):  # Para todos los temporizadores
@@ -197,6 +197,7 @@ func _on_timer_perro_5_timeout() -> void:
 func todos_enemigos_derrotados() -> bool:
 	for cantidad in enemigos.values():
 		if cantidad > 0:
+			game_win()
 			return false
 	return true
 
@@ -209,7 +210,8 @@ func resetear_enemigos_y_pasar_ronda():
 			print("Inicia la ronda:", ronda)
 			reiniciar_timers()  # Reinicia los temporizadores con las nuevas cantidades
 		else:
-			game_win()  # Si es la ronda 2, ganar el juego
+			pass
+			  # Si es la ronda 2, ganar el juego
 	else:
 		print("Aún quedan enemigos por derrotar.")
 
