@@ -31,12 +31,13 @@ text = "Volver al menu
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 383.0
-offset_top = 182.0
-offset_right = 673.0
-offset_bottom = 319.0
+offset_left = 377.0
+offset_top = 192.0
+offset_right = 667.0
+offset_bottom = 329.0
 theme_override_colors/font_shadow_color = Color(0.85098, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "Pausa"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
