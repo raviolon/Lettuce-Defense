@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhfso6urft85k"
-path="res://.godot/imported/Morron rojo.jpg-d8d3aced97d2b727b4a9973f7e3ae800.ctex"
+uid="uid://cv6h3k2sxmuwf"
+path="res://.godot/imported/carrot.svg-e89eee5daf7b8e30a6580eefca32fbac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Personaje/Morron/Morron rojo.jpg"
-dest_files=["res://.godot/imported/Morron rojo.jpg-d8d3aced97d2b727b4a9973f7e3ae800.ctex"]
+source_file="res://Personaje/Morron/carrot.svg"
+dest_files=["res://.godot/imported/carrot.svg-e89eee5daf7b8e30a6580eefca32fbac.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

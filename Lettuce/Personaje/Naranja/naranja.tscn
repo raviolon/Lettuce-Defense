@@ -10,7 +10,7 @@ size = Vector2(101, 88)
 radius = 85.8662
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5yuvf"]
-size = Vector2(161.25, 150.75)
+size = Vector2(91, 92)
 
 [node name="Naranja" type="CharacterBody2D" groups=["Torres"]]
 position = Vector2(538, 331)
@@ -38,7 +38,6 @@ autostart = true
 [node name="construc" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="construc"]
-position = Vector2(0.375, 0.625)
 shape = SubResource("RectangleShape2D_5yuvf")
 
 [connection signal="area_entered" from="Rango" to="." method="_on_rango_area_entered"]

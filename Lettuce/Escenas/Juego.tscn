@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://4mu7b7cpdsyd"]
+[gd_scene load_steps=20 format=3 uid="uid://4mu7b7cpdsyd"]
 
 [ext_resource type="Texture2D" uid="uid://bost23h4ed4m8" path="res://Mapas/tilemapes.svg" id="1_cwkm4"]
 [ext_resource type="Script" path="res://Escenas/Mapa1.gd" id="1_xyh3x"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://5k50flxnqquw" path="res://Personaje/Tomate/tomate.svg" id="7_hsqkx"]
 [ext_resource type="Texture2D" uid="uid://bud21deq5f1kn" path="res://Personaje/Naranja/naranja.svg" id="8_70knx"]
 [ext_resource type="Texture2D" uid="uid://4gnguosk41n4" path="res://Personaje/Choclo/choclo.svg" id="8_b0pgd"]
+[ext_resource type="Texture2D" uid="uid://cv6h3k2sxmuwf" path="res://Personaje/Morron/carrot.svg" id="9_i33pd"]
 [ext_resource type="Texture2D" uid="uid://bwv6fx0t5uvm0" path="res://Personaje/Lechuga/lechuga.jpg" id="9_pnrbb"]
 [ext_resource type="Script" path="res://Scripts/canvas_layer_2.gd" id="10_hl4pk"]
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="12_l1jpe"]
@@ -155,19 +156,24 @@ text = "Choclooooo"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Mapa1/Mapa/UI/HUD"]
 
 [node name="Sprite2D" type="Sprite2D" parent="Mapa1/Mapa/UI"]
-position = Vector2(648, 709)
+position = Vector2(650, 720)
 scale = Vector2(0.365741, 0.398148)
 texture = ExtResource("7_hsqkx")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Mapa1/Mapa/UI"]
-position = Vector2(552, 717)
+position = Vector2(552, 720)
 scale = Vector2(0.38922, 0.414643)
 texture = ExtResource("8_70knx")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Mapa1/Mapa/UI"]
-position = Vector2(369, 719)
+position = Vector2(369, 720)
 scale = Vector2(0.38922, 0.414643)
 texture = ExtResource("8_b0pgd")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Mapa1/Mapa/UI"]
+position = Vector2(461, 720)
+scale = Vector2(0.38922, 0.420436)
+texture = ExtResource("9_i33pd")
 
 [node name="GAMEOVER" type="CanvasLayer" parent="Mapa1/Mapa"]
 visible = false
